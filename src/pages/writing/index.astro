@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+// We want to collect together 'articles' and 'musings' (tweet-like thought and ideation with no intention to turn it into an article)
+
+// We'll want some form of nav to show just one or the other
+// We'll also want 'tag' like nav somewhere
+// We'll order chronologically - but that's unimportant to some extent and shouldn't be offered as a navigation method
+const articles = await getCollection("articles");
+
+const writing = [...articles].toSorted((a, b) =>
+  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1
+);
+
+const getDateString = (isoString: string) => {
+  const date = new Date(isoString);
+
+  return date.toLocaleDateString(undefined, {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+---
+
+<MainLayout>
+  <ul>
+    {
+      writing.map((w) => (
+        <li>
+          {() => {
+            console.log(w);
+            switch (w.collection) {
+              case "articles":
+                return (
+                  <a href={w.id}>
+                    <article>
+                      <h3>{w.data.title}</h3>
+                      <p>{w.data.description}</p>
+                      <footer>
+                        <p>
+                          Last updated{" "}
+                          <time datetime={w.data.lastUpdatedDate}>
+                            {getDateString(w.data.lastUpdatedDate)}
+                          </time>
+                        </p>
+                      </footer>
+                    </article>
+                  </a>
+                );
+            }
+          }}
+        </li>
+      ))
+    }
+  </ul>
+</MainLayout>

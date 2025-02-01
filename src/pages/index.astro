@@ -1,11 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Content as WelcomeContent } from "../../content/one-offs/welcome.md";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+  <section>
+    <header>
+      <h1>Dan Le Chambre</h1>
+      <p>Crafting Delightful Digital Experiences</p>
+    </header>
+    <WelcomeContent />
+  </section>
+</MainLayout>
