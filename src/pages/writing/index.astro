@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from "../../layouts/MainLayout.astro";
+import RootLayout from "../../layouts/RootLayout.astro";
 
 // We want to collect together 'articles' and 'musings' (tweet-like thought and ideation with no intention to turn it into an article)
 
@@ -25,7 +25,7 @@ const getDateString = (isoString: string) => {
 };
 ---
 
-<MainLayout>
+<RootLayout>
   <ul>
     {
       writing.map((w) => (
@@ -35,7 +35,7 @@ const getDateString = (isoString: string) => {
             switch (w.collection) {
               case "articles":
                 return (
-                  <a href={w.id}>
+                  <a href={`writing/${w.id}`}>
                     <article>
                       <h3>{w.data.title}</h3>
                       <p>{w.data.description}</p>
@@ -56,4 +56,4 @@ const getDateString = (isoString: string) => {
       ))
     }
   </ul>
-</MainLayout>
+</RootLayout>
