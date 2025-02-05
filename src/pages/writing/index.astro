@@ -8,8 +8,9 @@ import RootLayout from "../../layouts/RootLayout.astro";
 // We'll also want 'tag' like nav somewhere
 // We'll order chronologically - but that's unimportant to some extent and shouldn't be offered as a navigation method
 const articles = await getCollection("articles");
+const musings = await getCollection("musings");
 
-const writing = [...articles].sort((a, b) =>
+const writing = [...articles, ...musings].sort((a, b) =>
   a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1
 );
 
@@ -49,6 +50,8 @@ const getDateString = (isoString: string) => {
                     </article>
                   </a>
                 );
+              case "musings":
+                return <p>{w.data.text}</p>;
             }
           }}
         </li>
