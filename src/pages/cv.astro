@@ -1,0 +1,18 @@
+---
+import { Content } from "../../content/one-offs/cv.md";
+
+import RootLayout from "../layouts/RootLayout.astro";
+import StandardLayout from "../layouts/StandardLayout.astro";
+---
+
+<RootLayout>
+  <StandardLayout>
+    <Content />
+  </StandardLayout>
+</RootLayout>
+
+<style>
+  :global(.my-class) {
+    color: red;
+  }
+</style>

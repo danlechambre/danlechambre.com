@@ -2,7 +2,7 @@
 
 This is the source code for [danlechambre.com](https://danlechambre.com)
 
-In it, you'll find a mix of code and original creative work. I make it public for the simple reason that I would not be where I am today were it not for those who did the same. 
+In it, you'll find a mix of code and original creative work. I make it public for the simple reason that I would not be where I am today were it not for those who did the same.
 
 I hope it serves someone, somewhere, at some point in the future, as a learning aid or inspiration for their own projects.
 

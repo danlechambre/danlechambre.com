@@ -11,7 +11,7 @@ const articles = await getCollection("articles");
 const musings = await getCollection("musings");
 
 const writing = [...articles, ...musings].sort((a, b) =>
-  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1
+  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1,
 );
 
 const getDateString = (isoString: string) => {

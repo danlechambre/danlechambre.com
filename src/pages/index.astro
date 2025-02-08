@@ -2,14 +2,17 @@
 import { Content as WelcomeContent } from "../../content/one-offs/welcome.md";
 
 import RootLayout from "../layouts/RootLayout.astro";
+import StandardLayout from "../layouts/StandardLayout.astro";
 ---
 
 <RootLayout>
-  <section>
-    <header>
-      <h1>Dan Le Chambre</h1>
-      <p>Crafting Delightful Digital Experiences</p>
-    </header>
-    <WelcomeContent />
-  </section>
+  <StandardLayout>
+    <section>
+      <header>
+        <h1>Dan Le Chambre</h1>
+        <p>Crafting Delightful Digital Experiences</p>
+      </header>
+      <WelcomeContent />
+    </section>
+  </StandardLayout>
 </RootLayout>
