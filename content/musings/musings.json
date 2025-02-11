@@ -1,14 +1,8 @@
 [
   {
-    "id": "45548da3-d14d-4035-84c6-dfb7da995f2c",
-    "createdDate": "2025-02-02",
-    "lastUpdatedDate": "2025-02-02",
-    "text": "This is a test musing"
-  },
-  {
-    "id": "079f8d84-dbbf-47f7-80ae-92c9be239d11",
-    "createdDate": "2025-02-02",
-    "lastUpdatedDate": "2025-02-02",
-    "text": "This is another test musing"
+    "id": "0194f234-926f-711e-890a-52cc4ea70e1d",
+    "createdDate": "2025-10-02",
+    "lastUpdatedDate": "2025-10-02",
+    "text": "Wrapping third-party libs... I'm yet to see \"we can switch out the library without affecting the rest of the codebase\" actually happen irl"
   }
 ]

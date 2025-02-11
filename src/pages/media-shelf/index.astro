@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import RootLayout from "src/layouts/RootLayout.astro";
+
+const books = await getCollection("books");
+
+const mediaItems = [...books].sort((a, b) =>
+  a.data.dateFinished > b.data.dateFinished ? 1 : -1,
+);
+---
+<RootLayout>
+  <ul>
+      {mediaItems.map(item => 
+        <li>{item.data.isbn}</li>
+      )}
+  </ul>
+</RootLayout>

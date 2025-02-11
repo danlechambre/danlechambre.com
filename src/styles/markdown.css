@@ -1,0 +1,12 @@
+.markdown-content > p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content > ul {
+  margin-bottom: 1rem;
+}
+
+.md-subtitle {
+  color: palevioletred;
+  margin-bottom: 0.5rem;
+}

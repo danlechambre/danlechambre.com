@@ -9,6 +9,7 @@
     "preview": "wrangler types && wrangler pages dev ./dist"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
     "astro": "^5.1.9",
     "wrangler": "^3.107.2"
   },

@@ -1,18 +1,54 @@
 ---
+import MdStylesWrapper from "src/components/MdStylesWrapper.astro";
 import { Content as WelcomeContent } from "../../content/one-offs/welcome.md";
 
-import RootLayout from "../layouts/RootLayout.astro";
-import StandardLayout from "../layouts/StandardLayout.astro";
+import RootLayout from "@layouts/RootLayout.astro";
+import HomeLayout from "@layouts/HomeLayout.astro"
 ---
 
 <RootLayout>
-  <StandardLayout>
+  <HomeLayout>
     <section>
-      <header>
+      <header class="sr-only">
         <h1>Dan Le Chambre</h1>
         <p>Crafting Delightful Digital Experiences</p>
       </header>
-      <WelcomeContent />
+      <div class="content-wrapper">
+        <MdStylesWrapper>
+          <WelcomeContent />
+        </MdStylesWrapper>
+      </div>
     </section>
-  </StandardLayout>
+  </HomeLayout>
 </RootLayout>
+
+<style>
+  /* Copied from Tailwind for now */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  } 
+  
+  .content-wrapper {
+    margin-top: 1rem;
+    padding: 0 .85rem;
+  }
+
+  :global(.content-wrapper p:first-of-type::first-letter) {
+    initial-letter: 3.2;
+    margin-right: .5rem;
+    margin-top: -.2rem;
+  }
+
+  :global(.content-wrapper p:first-of-type::first-line) {
+    letter-spacing: .15rem;
+  }
+
+</style>

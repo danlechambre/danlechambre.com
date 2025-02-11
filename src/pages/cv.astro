@@ -1,5 +1,6 @@
 ---
 import { Content } from "../../content/one-offs/cv.md";
+import MdStylesLayout from "../components/MdStylesWrapper.astro";
 
 import RootLayout from "../layouts/RootLayout.astro";
 import StandardLayout from "../layouts/StandardLayout.astro";
@@ -7,12 +8,10 @@ import StandardLayout from "../layouts/StandardLayout.astro";
 
 <RootLayout>
   <StandardLayout>
-    <Content />
+    <MdStylesLayout>
+      <Content />
+    </MdStylesLayout>
   </StandardLayout>
 </RootLayout>
 
-<style>
-  :global(.my-class) {
-    color: red;
-  }
-</style>
+
