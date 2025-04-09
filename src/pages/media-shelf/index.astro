@@ -5,13 +5,31 @@ import RootLayout from "src/layouts/RootLayout.astro";
 const books = await getCollection("books");
 
 const mediaItems = [...books].sort((a, b) =>
-  a.data.dateFinished > b.data.dateFinished ? 1 : -1,
+  a.data.dateFinished > b.data.dateFinished ? -1 : 1
 );
 ---
+
 <RootLayout>
   <ul>
-      {mediaItems.map(item => 
-        <li>{item.data.isbn}</li>
-      )}
+    {
+      mediaItems.map((item) => (
+        <li>
+          <article>
+            <h3>{item.data.title}</h3>
+            <img
+              src={item.data.thumbnailSrc}
+              alt={`Book cover for ${item.data.title}`}
+            />
+            <p>by {item.data.authors.join(", ")}</p>
+            <p>
+              {"Finished reading "}
+              <time datetime={item.data.dateFinished}>
+                {item.data.dateFinished}
+              </time>
+            </p>
+          </article>
+        </li>
+      ))
+    }
   </ul>
 </RootLayout>
