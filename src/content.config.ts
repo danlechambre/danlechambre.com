@@ -3,7 +3,7 @@ import { file, glob } from "astro/loaders";
 
 import booksJson from "content/media-shelf/books.json";
 
-import { bookLoader, getBook } from "./content-helpers/books";
+import { bookLoader } from "./content-helpers/books";
 
 const articles = defineCollection({
   loader: glob({ pattern: ["*.md", "*.mdx"], base: "content/articles" }),

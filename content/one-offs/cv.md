@@ -2,9 +2,9 @@
 
 _Striving to build digital experiences that delight. I mostly do this with **React** and **TypeScript**._
 
-I've been developing software professionally since the end of 2020. I spent the decade prior working in IT Service Management and InfoSec, and spent several years in retail before that. What's that got to do with front-end engineering I hear you cry? I've been successful in all kinds of roles because I put humans first - and that's especially crucial when building UIs.
+I've been developing software professionally since the end of 2020. I spent the decade prior working in IT Service Management and InfoSec, and spent several years in retail before that. What's that got to do with front-end engineering I hear you cry? I've been successful in all kinds of roles because I put humans first - and that's especially crucial when building UI.
 
-My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web.
+My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web. Whilst I mostly work in **React** and **TypeScript** I'm passionate about web standards and a big believer in "using the platform".
 
 ## Job History
 
@@ -12,11 +12,13 @@ My focus is building digital experiences that are accessible, intuitive, look gr
 
 <p class="md-subtitle">July 2023 - Present</p>
 
-Building the Hark Platform, enabling businesses to connect to, analyse and optimise their industrial assets, buildings and energy in real-time. Working with a Product Team and other engineers to build high-impact features at velocity.
+Building the Hark Platform, enabling businesses to connect to, analyse, and optimise their industrial assets, buildings and energy in real-time.
+
+Working across the UI and Node 'back-end for front-end', planning and delivering impactful features at pace with a focus on performance and scalability. For example end to end creation of high-volume, interactive tables and charts containing thousands of data points.
 
 <div class="md-callout">
 
-**Tools:** React, Node, TypeScript, Styled Components, Webpack, Azure DevOps
+**Tools:** React, Node, TypeScript, Highcharts, Styled Components, Webpack, Azure DevOps
 
 </div>
 
@@ -34,7 +36,7 @@ Lead Front-End developer on SaaS product for Phoenix, AZ based startup. Taking d
 
 <div class="md-callout">
 
-**Tools:** React, Material UI, Stripe SDK, GCP, Firebase, Neo4J
+**Tools:** React, Node, TypeScript, Material UI, Stripe SDK, GCP, Firebase, LLMs, Neo4J
 
 </div>
 
