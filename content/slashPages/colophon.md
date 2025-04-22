@@ -1,4 +1,8 @@
-# Colophon
+---
+title: "Colophon"
+subtitle: "How this site is built"
+slug: "colophon"
+---
 
 When building this site I had a very clear vision of what and how I wanted to publish. Shortly after I started I found that the aims and ambitions I had for my site aligned very well with the principles defined by [IndieWeb](https://indieweb.org). So before I go ahead and add something, I'll check to see whether there is a _principle_ or a common approach that will enhance how this site will integrate with the **IndieWeb**.
 

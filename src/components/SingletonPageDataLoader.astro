@@ -1,0 +1,21 @@
+---
+import { getEntry, render } from "astro:content";
+
+import RootLayout from "../layouts/RootLayout.astro";
+
+const { pathname } = Astro.url;
+const pathSegments = pathname.split("/").filter(Boolean);
+const path = pathSegments[pathSegments.length - 1];
+
+const entry = await getEntry("singletonPages", path);
+
+if (typeof entry === "undefined") {
+  throw new Error(`[connect] could not get entry for '${path}'`);
+}
+
+const { Content } = await render(entry);
+---
+
+<RootLayout>
+  <Content />
+</RootLayout>

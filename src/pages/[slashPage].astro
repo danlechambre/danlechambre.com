@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import RootLayout from "../layouts/RootLayout.astro";
+import { render } from "astro:content";
+
+interface Props {
+  slashPage: CollectionEntry<"slashPages">;
+}
+
+export async function getStaticPaths() {
+  const slashPages = await getCollection("slashPages");
+
+  return slashPages.map((slashPage) => ({
+    params: { slashPage: slashPage.data.slug },
+    props: { slashPage },
+  }));
+}
+
+const { slashPage } = Astro.props;
+
+const { Content } = await render(slashPage);
+---
+
+<RootLayout>
+  <main>
+    <Content />
+  </main>
+</RootLayout>

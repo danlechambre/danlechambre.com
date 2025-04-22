@@ -1,4 +1,8 @@
-# Now
+---
+title: "Now"
+subtitle: "What am I doing right now? Well, not literally right now, but you know what I mean"
+slug: "now"
+---
 
 I'm working as a Full-stack TypeScript Engineer at Hark by SolarEdge. When I'm not doing that I might be building Why Grief Matters.
 

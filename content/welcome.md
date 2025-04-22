@@ -1,4 +1,4 @@
-Welcome. I'm Dan, a digital creative based in the North of England. My specialism, is generalism. I approach life and work with a polymathic spirit. I've no desire to be an expert at any one thing, but I do want to be as to close to the bottom of my bucket list as I can before my time on this ball of rock is up.
+Welcome. I'm Dan, a digital creative based in the North of England. I approach life and work with a polymathic spirit. I prioritise exploration and curiosity over mastery.
 
 For the last few years, building for the web has held my interest and gets me paid. Right now I'm working as a _Full-Stack TypeScript Engineer_ for [Hark](https://harksys.com).
 

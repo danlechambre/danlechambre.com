@@ -1,4 +1,7 @@
-# Dan Chambers
+---
+title: "Dan Chambers"
+slug: "cv"
+---
 
 _Striving to build digital experiences that delight. I mostly do this with **React** and **TypeScript**._
 

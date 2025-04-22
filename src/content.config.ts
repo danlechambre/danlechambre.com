@@ -17,6 +17,15 @@ const articles = defineCollection({
   }),
 });
 
+const slashPages = defineCollection({
+  loader: glob({ pattern: ["*.md", "*.mdx"], base: "content/slashPages" }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    slug: z.string(),
+  }),
+});
+
 const musings = defineCollection({
   loader: file("content/musings/musings.json"),
   schema: z.object({
@@ -37,4 +46,9 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { articles, musings, books };
+export const collections = {
+  articles,
+  slashPages,
+  musings,
+  books,
+};

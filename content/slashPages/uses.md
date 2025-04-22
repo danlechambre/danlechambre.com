@@ -1,4 +1,8 @@
-# Uses
+---
+title: "Uses"
+subtitle: "What am I doing right now? Well, not literally right now, but you know what I mean"
+slug: "uses"
+---
 
 ## Hardware
 
