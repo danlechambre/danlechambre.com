@@ -6,7 +6,7 @@ export async function bookLoader(booksJson: any) {
   return books.map((b, i) => ({
     ...b,
     id: b?.id ?? crypto.randomUUID(),
-    dateFinished: booksJson[i].dateFinished,
+    dateCompleted: booksJson[i].dateCompleted,
   }));
 }
 

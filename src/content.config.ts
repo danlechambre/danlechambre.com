@@ -2,8 +2,12 @@ import { defineCollection, z } from "astro:content";
 import { file, glob } from "astro/loaders";
 
 import booksJson from "content/media-shelf/books.json";
+import tvShowsJson from "content/media-shelf/tvShows.json";
+import filmsJson from "content/media-shelf/films.json";
 
 import { bookLoader } from "./content-helpers/books";
+import { tvShowLoader } from "./content-helpers/tv";
+import { filmLoader } from "./content-helpers/film";
 
 const articles = defineCollection({
   loader: glob({ pattern: ["*.md", "*.mdx"], base: "content/articles" }),
@@ -42,7 +46,25 @@ const books = defineCollection({
     authors: z.array(z.string()),
     description: z.string(),
     thumbnailSrc: z.string().url(),
-    dateFinished: z.string().date(),
+    dateCompleted: z.string().date(),
+  }),
+});
+
+const tvShows = defineCollection({
+  loader: () => tvShowLoader(tvShowsJson),
+  schema: z.object({
+    title: z.string(),
+    imageUrl: z.string().url(),
+    dateCompleted: z.any(), //fix
+  }),
+});
+
+const films = defineCollection({
+  loader: () => filmLoader(filmsJson),
+  schema: z.object({
+    title: z.string(),
+    imageUrl: z.string().url(),
+    dateCompleted: z.any(), //fix
   }),
 });
 
@@ -51,4 +73,6 @@ export const collections = {
   slashPages,
   musings,
   books,
+  tvShows,
+  films,
 };

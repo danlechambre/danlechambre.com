@@ -3,33 +3,76 @@ import { getCollection } from "astro:content";
 import RootLayout from "src/layouts/RootLayout.astro";
 
 const books = await getCollection("books");
+const tvShows = await getCollection("tvShows");
+const films = await getCollection("films");
 
-const mediaItems = [...books].sort((a, b) =>
-  a.data.dateFinished > b.data.dateFinished ? -1 : 1
+const mediaItems = [...books, ...tvShows, ...films].sort((a, b) =>
+  a.data.dateCompleted > b.data.dateCompleted ? -1 : 1,
 );
 ---
 
 <RootLayout>
   <ul>
     {
-      mediaItems.map((item) => (
-        <li>
-          <article>
-            <h3>{item.data.title}</h3>
-            <img
-              src={item.data.thumbnailSrc}
-              alt={`Book cover for ${item.data.title}`}
-            />
-            <p>by {item.data.authors.join(", ")}</p>
-            <p>
-              {"Finished reading "}
-              <time datetime={item.data.dateFinished}>
-                {item.data.dateFinished}
-              </time>
-            </p>
-          </article>
-        </li>
-      ))
+      mediaItems.map((item) => {
+        switch (item.collection) {
+          case "books":
+            return (
+              <li>
+                <article>
+                  <h3>{item.data.title}</h3>
+                  <img
+                    src={item.data.thumbnailSrc}
+                    alt={`Book cover for ${item.data.title}`}
+                  />
+                  <p>by {item.data.authors.join(", ")}</p>
+                  <p>
+                    {"Finished reading "}
+                    <time datetime={item.data.dateCompleted}>
+                      {item.data.dateCompleted}
+                    </time>
+                  </p>
+                </article>
+              </li>
+            );
+          case "tvShows":
+            return (
+              <li>
+                <article>
+                  <h3>{item.data.title}</h3>
+                  <img
+                    src={item.data.imageUrl}
+                    alt={`Cover art for ${item.data.title}`}
+                  />
+                  <p>
+                    {"Finished watching "}
+                    <time datetime={item.data.dateCompleted}>
+                      {item.data.dateCompleted}
+                    </time>
+                  </p>
+                </article>
+              </li>
+            );
+          case "films":
+            return (
+              <li>
+                <article>
+                  <h3>{item.data.title}</h3>
+                  <img
+                    src={item.data.imageUrl}
+                    alt={`Cover art for ${item.data.title}`}
+                  />
+                  <p>
+                    {"Finished watching "}
+                    <time datetime={item.data.dateCompleted}>
+                      {item.data.dateCompleted}
+                    </time>
+                  </p>
+                </article>
+              </li>
+            );
+        }
+      })
     }
   </ul>
 </RootLayout>

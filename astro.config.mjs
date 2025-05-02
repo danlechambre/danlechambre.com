@@ -1,9 +1,20 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx()]
+  integrations: [mdx()],
+  env: {
+    schema: {
+      TMDB_API_READ_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      TMDB_API_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
+  },
 });
