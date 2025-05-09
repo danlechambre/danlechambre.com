@@ -1,12 +1,16 @@
-.markdown-content > p {
-  margin-bottom: 1rem;
-}
+/*
+Styles applied to Markdown. All classes should carry the 'md-' prefix
+*/
 
-.markdown-content > ul {
-  margin-bottom: 1rem;
+.md-container {
+  /* Styles applied to the entire container */
 }
 
 .md-subtitle {
-  color: palevioletred;
-  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.md-callout {
+  padding: 12px;
+  background-color: aliceblue;
 }

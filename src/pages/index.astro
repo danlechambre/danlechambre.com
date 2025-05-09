@@ -13,26 +13,9 @@ import HomeLayout from "@layouts/HomeLayout.astro";
         <h1>Dan Le Chambre</h1>
         <p>Crafting Delightful Digital Experiences</p>
       </header>
-      <div class="content-wrapper">
-        <MdStylesWrapper>
-          <WelcomeContent />
-        </MdStylesWrapper>
-      </div>
+      <MdStylesWrapper>
+        <WelcomeContent />
+      </MdStylesWrapper>
     </section>
   </HomeLayout>
 </RootLayout>
-
-<style>
-  /* Copied from Tailwind for now */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-</style>

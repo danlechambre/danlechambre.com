@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import RootLayout from "../../layouts/RootLayout.astro";
 import { render } from "astro:content";
+import MdStylesWrapper from "src/components/MdStylesWrapper.astro";
 
 interface Props {
   article: CollectionEntry<"articles">;
@@ -27,6 +28,8 @@ const { Content } = await render(article);
     <h1>
       {article.data.title}
     </h1>
-    <Content />
+    <MdStylesWrapper>
+      <Content />
+    </MdStylesWrapper>
   </main>
 </RootLayout>
