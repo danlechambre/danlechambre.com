@@ -1,15 +1,16 @@
 ---
 title: "Dan Chambers"
+subtitle: "Full Stack Web Developer"
 slug: "cv"
 ---
 
 _Striving to build digital experiences that delight. I mostly do this with **React** and **TypeScript**._
 
-I've been developing software professionally since the end of 2020. I spent the decade prior working in IT Service Management and InfoSec, and spent several years in retail before that. What's that got to do with web application development I hear you cry? I've been successful in all kinds of roles because I put humans first - and that's especially crucial when building UI.
+Developing software professionally since the end of 2020, backed by a decade in IT Service Management and InfoSec, and several years in retail before that, I bring a unique perspective to application development. I've been successful in all kinds of roles because I put humans first, and that's especially crucial when building for the web.
 
-My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web. Whilst I mostly work in **React** and **TypeScript** I'm passionate about web standards and a big believer in "using the platform".
+My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web. Whilst I mostly work in **React** and **TypeScript** I'm passionate about web standards and a big believer in _"using the platform"_.
 
-## Job History
+## Professional Experience
 
 ### Full-Stack TypeScript Engineer at [Hark by SolarEdge](https://harksys.com)
 
@@ -17,50 +18,106 @@ My focus is building digital experiences that are accessible, intuitive, look gr
 
 Building the Hark Platform, enabling businesses to connect to, analyse, and optimise their industrial assets, buildings and energy in real-time.
 
-Working across the UI and Node 'back-end for front-end', planning and delivering impactful features at pace with a focus on performance and scalability. For example end to end creation of high-volume, interactive tables and charts containing thousands of data points.
+#### Key Contributions
 
-<div class="md-callout">
+- End-to-end development of complex monitoring interfaces involving high-volume data sets, interactive tables and charts.
+- Leading on improvements to project architecture, balancing immediate delivery needs with long-term technical debt prevention.
+- Significant contributions to in-platform user-facing documentation.
+- Continuous contribution to the planning and technical design of features.
+- Delivering regular demos of high impact features to internal stakeholders.
 
-**Tools:** React, Node, TypeScript, Highcharts, Styled Components, Webpack, Azure DevOps
+#### Technologies
 
-</div>
+- TypeScript
+- React
+- Node
+- Express
+- tRPC
+- Zod
+- Redux
+- Styled Components
+- Highcharts
+- Webpack
+- Azure DevOps
 
 ### Software Developer at [StyleTech Solutions Ltd.](https://www.styletech.co.uk/)
 
 <p class="md-subtitle">January 2021 - April 2023</p>
 
-Building software of all kinds and all sizes for a variety of clients. Working on client projects as well as on a sub-contracted basis. An immensely valuable whirlwind-like introduction into the world of professional software development.
+Building software of all kinds and all sizes for a variety of clients. Working on client projects as well as on a sub-contracted basis.
 
 #### Lead Front-End Developer at [RAIDLOG.com](https://raidlog.com)
 
-<p class="md-subtitle">March 2022 - April 2023</p>
+<p class="md-subtitle">March 2022 - April 2023 (subcontracted)</p>
 
-Lead Front-End developer on SaaS product for Phoenix, AZ based startup. Taking designs through to fully featured MVP, enabling product to go to market with revenue-generating paid plans.
+Subcontracted through StyleTech to lead on front-end development for RAIDLOG.COM. Translated designs into a fully-featured MVP that enabled market entry with revenue-generating paid plans.
 
-<div class="md-callout">
+##### Key Contributions
 
-**Tools:** React, Node, TypeScript, Material UI, Stripe SDK, GCP, Firebase, LLMs, Neo4J
+- Architected and developed entire front-end application through to launch.
+- Integrated Stripe SDK for subscription management and payment processing.
+- Integrated LLM, providing 'AI' capabilities providing competitive edge.
+- Transformed high-level requirements into clearly defined, prioritized tasks, establishing a structured delivery framework that improved estimation accuracy and enabled reliable sprint planning.
 
-</div>
+##### Technologies
+
+- TypeScript
+- React
+- React Query (now TanStack)
+- React Hook Form
+- Yup
+- Zustand
+- Material UI
+- Lexical
+- Stripe
+- GPT-3.5 Turbo
+- GitHub
 
 #### Front-End Developer for Patient Reported Outcomes Measures (PROMs) App
 
 <p class="md-subtitle">September 2021 - January 2022</p>
 
-Built React based mobile app for client working on behalf of a large cancer charity. Worked directly with client to evolve design and deliver incremental builds using the Azure DevOps platform. Released to both major app stores.
+Client project to build local-first React based mobile app for a large cancer charity. Worked directly with client to evolve design and deliver incremental builds using the Azure DevOps platform. Released to both major app stores.
 
-<div class="md-callout">
+##### Technologies
 
-**Tools:** React, React Router, Tailwind, Xamarin WebView
+- React
+- Tailwind
+- Xamarin
+- Azure DevOps
 
-</div>
-
-#### Other Projects at StyleTech
+#### Other Notable Projects at StyleTech
 
 - Built **WCAG 2.1 (AA)** compliant front-end for public sector health organisation with **jQuery**, **Kendo UI**, **Bootstrap** and custom CSS.
 - Developed new features for a sports coaching solution, working full stack with **Kendo UI**, **.NET MVC** and **SQL**.
 - Worked on **i18n/l10n** of delivery depot software for a multi-national trade kitchen and joinery supplier.
 - Built a payslip generator/emailer desktop app for a small yacht management company with **.NET WPF**.
+
+## Other Notable Projects
+
+### Why Grief Matters
+
+<p class="md-subtitle">Jan 2023 - Present</p>
+
+Working on a freelance basis with the eminent Dr. Camille Wortman to build a platform focused on bringing together the best resources on grief from around the internet.
+
+#### Key Contributions
+
+- Designed and implemented a cost-efficient, performant, scalable platform to put organization on the path to success.
+- Implemented separate headless CMS and website providing a user-friendly content authoring experience.
+- Implemented CI/CD pipeline to enable rapid deployment.
+- Onboarded and managed several volunteer developers of varying experience.
+
+#### Technologies
+
+- Astro
+- Sanity
+- Tailwind
+- Cloudflare
+- Resend
+- GitHub
+
+## Non-Development Experience
 
 ### InfoSec & IT Service Mgmt. at [The University of Hull](https://www.hull.ac.uk/)
 
