@@ -4,10 +4,12 @@ import { file, glob } from "astro/loaders";
 import booksJson from "content/media-shelf/books.json";
 import tvShowsJson from "content/media-shelf/tvShows.json";
 import filmsJson from "content/media-shelf/films.json";
+import gamesJson from "content/media-shelf/games.json";
 
 import { bookLoader } from "./content-helpers/books";
 import { tvShowLoader } from "./content-helpers/tv";
 import { filmLoader } from "./content-helpers/film";
+import { gameLoader } from "./content-helpers/game";
 
 const articles = defineCollection({
   loader: glob({ pattern: ["*.md", "*.mdx"], base: "content/articles" }),
@@ -68,6 +70,15 @@ const films = defineCollection({
   }),
 });
 
+const games = defineCollection({
+  loader: () => gameLoader(gamesJson),
+  schema: z.object({
+    title: z.string(),
+    imageUrl: z.string().url(),
+    dateCompleted: z.any(),
+  }),
+});
+
 export const collections = {
   articles,
   slashPages,
@@ -75,4 +86,5 @@ export const collections = {
   books,
   tvShows,
   films,
+  games,
 };

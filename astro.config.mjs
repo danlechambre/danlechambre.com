@@ -15,6 +15,18 @@ export default defineConfig({
         context: "server",
         access: "secret",
       }),
+      RAWG_API_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      TWITCH_IGDB_CLIENT_ID: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      TWITCH_IGDB_CLIENT_SECRET: envField.string({
+        context: "server",
+        access: "secret",
+      }),
     },
   },
 });

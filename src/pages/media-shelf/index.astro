@@ -5,9 +5,10 @@ import RootLayout from "src/layouts/RootLayout.astro";
 const books = await getCollection("books");
 const tvShows = await getCollection("tvShows");
 const films = await getCollection("films");
+const games = await getCollection("games");
 
-const mediaItems = [...books, ...tvShows, ...films].sort((a, b) =>
-  a.data.dateCompleted > b.data.dateCompleted ? -1 : 1,
+const mediaItems = [...books, ...tvShows, ...films, ...games].sort((a, b) =>
+  a.data.dateCompleted > b.data.dateCompleted ? -1 : 1
 );
 ---
 
@@ -64,6 +65,24 @@ const mediaItems = [...books, ...tvShows, ...films].sort((a, b) =>
                   />
                   <p>
                     {"Finished watching "}
+                    <time datetime={item.data.dateCompleted}>
+                      {item.data.dateCompleted}
+                    </time>
+                  </p>
+                </article>
+              </li>
+            );
+          case "games":
+            return (
+              <li>
+                <article>
+                  <h3>{item.data.title}</h3>
+                  <img
+                    src={item.data.imageUrl}
+                    alt={`Cover art for ${item.data.title}`}
+                  />
+                  <p>
+                    {"Finished playing "}
                     <time datetime={item.data.dateCompleted}>
                       {item.data.dateCompleted}
                     </time>

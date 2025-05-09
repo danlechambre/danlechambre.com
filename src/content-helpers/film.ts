@@ -45,8 +45,6 @@ export async function filmLoader(filmsJson: any) {
   const promises = filmsJson.map((film: any) => getFilm(film.id));
   const films = await Promise.all(promises);
 
-  console.log(films);
-
   return films.map((film, i) => ({
     ...film,
     id: film?.id ?? crypto.randomUUID(),
@@ -77,13 +75,9 @@ export async function getFilm(imdbId: string) {
 
     const result = await response.json();
 
-    console.log("movie result: ", result);
-
     const filmDetails = result.movie_results.find(
       (f: any) => f.original_language === "en",
     );
-
-    console.log("film details: ", filmDetails);
 
     const contentItem = {
       id: imdbId,

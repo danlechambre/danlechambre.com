@@ -45,8 +45,6 @@ export async function tvShowLoader(tvShowsJson: any) {
   const promises = tvShowsJson.map((show: any) => getTvShow(show.id));
   const tvShows = await Promise.all(promises);
 
-  console.log(tvShows);
-
   return tvShows.map((show, i) => ({
     ...show,
     id: show?.id ?? crypto.randomUUID(),
@@ -76,11 +74,8 @@ export async function getTvShow(imdbId: string) {
     }
 
     const result = await response.json();
-    console.log(result);
 
     const showDetails = result.tv_results[0];
-
-    console.log("showDetails:", showDetails);
 
     const contentItem = {
       id: imdbId,
@@ -90,8 +85,6 @@ export async function getTvShow(imdbId: string) {
         (apiConfig.images.poster_sizes[1] ?? "original") +
         showDetails.poster_path,
     };
-
-    console.log(contentItem);
 
     return contentItem;
   } catch (error) {
