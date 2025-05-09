@@ -5,7 +5,7 @@ slug: "cv"
 
 _Striving to build digital experiences that delight. I mostly do this with **React** and **TypeScript**._
 
-I've been developing software professionally since the end of 2020. I spent the decade prior working in IT Service Management and InfoSec, and spent several years in retail before that. What's that got to do with front-end engineering I hear you cry? I've been successful in all kinds of roles because I put humans first - and that's especially crucial when building UI.
+I've been developing software professionally since the end of 2020. I spent the decade prior working in IT Service Management and InfoSec, and spent several years in retail before that. What's that got to do with web application development I hear you cry? I've been successful in all kinds of roles because I put humans first - and that's especially crucial when building UI.
 
 My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web. Whilst I mostly work in **React** and **TypeScript** I'm passionate about web standards and a big believer in "using the platform".
 
