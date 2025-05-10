@@ -16,13 +16,14 @@ My focus is building digital experiences that are accessible, intuitive, look gr
 
 <p class="md-subtitle">July 2023 - Present</p>
 
-Building the Hark Platform, enabling businesses to connect to, analyse, and optimise their industrial assets, buildings and energy in real-time.
+Building the Hark Platform, enabling businesses to connect to, analyse, and optimise their industrial assets, buildings, and energy in real-time.
 
 #### Key Contributions
 
 - End-to-end development of complex monitoring interfaces involving high-volume data sets, interactive tables and charts.
 - Leading on improvements to project architecture, balancing immediate delivery needs with long-term technical debt prevention.
-- Significant contributions to in-platform user-facing documentation.
+- Fostering collaborative development practices, facilitating discussion and iteration by encouraging early pull requests and frequent commits.
+- Significant contributions to improving in-platform user-facing documentation.
 - Continuous contribution to the planning and technical design of features.
 - Delivering regular demos of high impact features to internal stakeholders.
 
@@ -42,13 +43,13 @@ Building the Hark Platform, enabling businesses to connect to, analyse, and opti
 
 ### Software Developer at [StyleTech Solutions Ltd.](https://www.styletech.co.uk/)
 
-<p class="md-subtitle">January 2021 - April 2023</p>
+<p class="md-subtitle">December 2020 - April 2023</p>
 
-Building software of all kinds and all sizes for a variety of clients. Working on client projects as well as on a sub-contracted basis.
+Built applications for enterprise clients, start-ups, and everything in between. Worked on client projects as well as on a subcontracted basis.
 
 #### Lead Front-End Developer at [RAIDLOG.com](https://raidlog.com)
 
-<p class="md-subtitle">March 2022 - April 2023 (subcontracted)</p>
+<p class="md-subtitle">March 2022 - April 2023</p>
 
 Subcontracted through StyleTech to lead on front-end development for RAIDLOG.COM. Translated designs into a fully-featured MVP that enabled market entry with revenue-generating paid plans.
 
@@ -56,7 +57,7 @@ Subcontracted through StyleTech to lead on front-end development for RAIDLOG.COM
 
 - Architected and developed entire front-end application through to launch.
 - Integrated Stripe SDK for subscription management and payment processing.
-- Integrated LLM, providing 'AI' capabilities providing competitive edge.
+- Integrated LLM, providing 'AI' capabilities for competitive edge.
 - Transformed high-level requirements into clearly defined, prioritized tasks, establishing a structured delivery framework that improved estimation accuracy and enabled reliable sprint planning.
 
 ##### Technologies
@@ -83,6 +84,7 @@ Client project to build local-first React based mobile app for a large cancer ch
 
 - React
 - Tailwind
+- MSAL
 - Xamarin
 - Azure DevOps
 
@@ -111,10 +113,12 @@ Working on a freelance basis with the eminent Dr. Camille Wortman to build a pla
 #### Technologies
 
 - Astro
+- Web components
 - Sanity
 - Tailwind
 - Cloudflare
 - Resend
+- Clerk
 - GitHub
 
 ## Non-Development Experience
@@ -124,6 +128,9 @@ Working on a freelance basis with the eminent Dr. Camille Wortman to build a pla
 <p class="md-subtitle">August 2012 - December 2019</p>
 
 - Information Security Specialist (Oct 2016 - Dec 2019)
+  - Coordinated BAU InfoSec and Information Assurance activities across the University
+  - Designed and led implementation of an Information Security Architecture
+  - Deployed and managed various InfoSec systems such as vulnerability management and SIEM
 - IT Services Analyst (Aug 2012 - Sep 2016)
 
 ### IT Service Management & Various Retail at [Comet Group Plc./Ltd.](<https://en.wikipedia.org/wiki/Comet_(retailer)>)
