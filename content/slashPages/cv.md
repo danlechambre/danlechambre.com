@@ -6,9 +6,7 @@ slug: "cv"
 
 _Striving to build digital experiences that delight. I mostly do this with **React** and **TypeScript**._
 
-Developing software professionally since the end of 2020, backed by a decade in IT Service Management and InfoSec, and several years in retail before that, I bring a unique perspective to application development. I've been successful in all kinds of roles because I put humans first, and that's especially crucial when building for the web.
-
-My focus is building digital experiences that are accessible, intuitive, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web. Whilst I mostly work in **React** and **TypeScript** I'm passionate about web standards and a big believer in _"using the platform"_.
+I’ve been building software professionally since the end of 2020. Backed by a decade in IT and InfoSec, and several years in retail, I bring a unique, human-centred perspective to app development. I focus on building digital experiences that are accessible, look great, and are blazingly fast. I thrive when part of a diverse team that values humility, creativity and quality when building the web.
 
 ## Professional Experience
 

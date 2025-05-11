@@ -1,8 +1,8 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
 import RootLayout from "../../layouts/RootLayout.astro";
-import { render } from "astro:content";
+import StandardLayout from "@layouts/StandardLayout.astro";
 import MdStylesWrapper from "src/components/MdStylesWrapper.astro";
 
 interface Props {
@@ -24,12 +24,12 @@ const { Content } = await render(article);
 ---
 
 <RootLayout>
-  <main>
+  <StandardLayout>
     <h1>
       {article.data.title}
     </h1>
     <MdStylesWrapper>
       <Content />
     </MdStylesWrapper>
-  </main>
+  </StandardLayout>
 </RootLayout>
