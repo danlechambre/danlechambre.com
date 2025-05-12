@@ -11,7 +11,7 @@ const articles = await getCollection("articles");
 const musings = await getCollection("musings");
 
 const writing = [...articles, ...musings].sort((a, b) =>
-  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1,
+  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1
 );
 
 const getDateString = (isoString: string) => {
@@ -35,7 +35,7 @@ const getDateString = (isoString: string) => {
             switch (w.collection) {
               case "articles":
                 return (
-                  <a href={`writing/${w.id}`}>
+                  <a href={`/writing/${w.id}`}>
                     <article>
                       <h3>{w.data.title}</h3>
                       <p>{w.data.description}</p>
