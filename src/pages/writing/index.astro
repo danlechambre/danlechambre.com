@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import RootLayout from "../../layouts/RootLayout.astro";
+import StandardLayout from "@layouts/StandardLayout.astro";
 
 // We want to collect together 'articles' and 'musings' (tweet-like thought and ideation with no intention to turn it into an article)
 
@@ -27,35 +28,33 @@ const getDateString = (isoString: string) => {
 ---
 
 <RootLayout>
-  <ul>
-    {
-      writing.map((w) => (
-        <li>
-          {() => {
-            switch (w.collection) {
-              case "articles":
-                return (
-                  <a href={`/writing/${w.id}`}>
-                    <article>
-                      <h3>{w.data.title}</h3>
-                      <p>{w.data.description}</p>
-                      <footer>
-                        <p>
-                          Last updated{" "}
-                          <time datetime={w.data.lastUpdatedDate}>
-                            {getDateString(w.data.lastUpdatedDate)}
-                          </time>
-                        </p>
-                      </footer>
-                    </article>
-                  </a>
-                );
-              case "musings":
-                return <p>{w.data.text}</p>;
-            }
-          }}
-        </li>
-      ))
-    }
-  </ul>
+  <StandardLayout>
+    <section>
+      {
+        writing.map((w) => () => {
+          switch (w.collection) {
+            case "articles":
+              return (
+                <a href={`/writing/${w.id}`}>
+                  <article>
+                    <h3>{w.data.title}</h3>
+                    <p>{w.data.description}</p>
+                    <footer>
+                      <p>
+                        Last updated{" "}
+                        <time datetime={w.data.lastUpdatedDate}>
+                          {getDateString(w.data.lastUpdatedDate)}
+                        </time>
+                      </p>
+                    </footer>
+                  </article>
+                </a>
+              );
+            case "musings":
+              return <p>{w.data.text}</p>;
+          }
+        })
+      }
+    </section>
+  </StandardLayout>
 </RootLayout>

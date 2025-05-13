@@ -4,27 +4,25 @@
   box-sizing: border-box;
 }
 
-body {
-  line-height: 1.6;
-  font-size: 1.1rem;
-  /* font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif; */
-  font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052,
-    serif;
-  font-weight: normal;
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- */
-/* Typography */
-/* ---------- */
-
-body {
-  line-height: 1.6;
+  text-size-adjust: none;
+  line-height: 1.75;
   font-size: 1.1rem;
   /* Old Style - https://modernfontstacks.com/#font-stacks */
   font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052,
     serif;
   font-weight: normal;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  margin: 0;
 }
 
 .sans {
@@ -45,4 +43,26 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+p {
+  text-wrap: pretty;
 }
