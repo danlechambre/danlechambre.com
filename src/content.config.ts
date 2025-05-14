@@ -18,7 +18,7 @@ const articles = defineCollection({
     description: z.string(),
     createdDate: z.string().date(),
     lastUpdatedDate: z.string().date(),
-    state: z.enum(["notion", "forming", "realized", "reworked"]),
+    state: z.enum(["notion", "forming", "realised", "reworked"]),
     tags: z.string().array(),
   }),
 });

@@ -6,6 +6,10 @@ Styles applied to Markdown. All classes should carry the 'md-' prefix
   /* Styles applied to the entire container */
 }
 
+.md-container p {
+  padding: 0 1em;
+}
+
 .md-subtitle {
   font-style: italic;
 }

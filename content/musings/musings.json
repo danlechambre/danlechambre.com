@@ -1,8 +1,8 @@
 [
   {
     "id": "0194f234-926f-711e-890a-52cc4ea70e1d",
-    "createdDate": "2025-10-02",
-    "lastUpdatedDate": "2025-10-02",
+    "createdDate": "2025-02-10",
+    "lastUpdatedDate": "2025-02-10",
     "text": "Wrapping third-party libs... I'm yet to see \"we can switch out the library without affecting the rest of the codebase\" actually happen irl"
   }
 ]

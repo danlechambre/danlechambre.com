@@ -1,3 +1,6 @@
+/* ----------------- */
+/* Sensible defaults */
+/* ----------------- */
 *,
 *::before,
 *::after {
@@ -17,12 +20,63 @@ html {
   font-weight: normal;
 }
 
+body {
+  margin: 0;
+}
+
+/* Sensible media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
 }
 
-body {
-  margin: 0;
+/* Interactive elements should inherit typography in the first instance */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Heading defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1.1;
+  /* this gives me the heebies but gets us going - would prefer it to be set when needed */
+  margin: 1ex 0 0.5rem;
+}
+
+p {
+  text-wrap: pretty;
+  word-wrap: break-word;
+}
+
+a:not([class]),
+a:not([class]):visited {
+  text-decoration-skip-ink: auto;
+  text-decoration-color: palevioletred;
+  color: inherit;
 }
 
 .sans {
@@ -32,7 +86,7 @@ body {
   font-weight: normal;
 }
 
-/* Styles for screen readers */
+/* Screen Reader only utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -43,26 +97,4 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-p {
-  text-wrap: pretty;
 }

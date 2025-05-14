@@ -12,7 +12,7 @@ const articles = await getCollection("articles");
 const musings = await getCollection("musings");
 
 const writing = [...articles, ...musings].sort((a, b) =>
-  a.data.lastUpdatedDate > b.data.lastUpdatedDate ? 1 : -1
+  a.data.createdDate > b.data.createdDate ? -1 : 1
 );
 
 const getDateString = (isoString: string) => {
@@ -29,32 +29,62 @@ const getDateString = (isoString: string) => {
 
 <RootLayout>
   <StandardLayout>
-    <section>
+    <section class="container">
       {
         writing.map((w) => () => {
           switch (w.collection) {
             case "articles":
               return (
-                <a href={`/writing/${w.id}`}>
-                  <article>
+                <article class="article">
+                  <a class="linked-header" href={`/writing/${w.id}`}>
                     <h3>{w.data.title}</h3>
-                    <p>{w.data.description}</p>
-                    <footer>
-                      <p>
-                        Last updated{" "}
-                        <time datetime={w.data.lastUpdatedDate}>
-                          {getDateString(w.data.lastUpdatedDate)}
-                        </time>
-                      </p>
-                    </footer>
-                  </article>
-                </a>
+                  </a>
+                  <p>{w.data.description}</p>
+                  <footer>
+                    <p>
+                      Last updated{" "}
+                      <time datetime={w.data.lastUpdatedDate}>
+                        {getDateString(w.data.lastUpdatedDate)}
+                      </time>
+                    </p>
+                    <a href={`/writing/${w.id}`}>{"Read more"}</a>
+                  </footer>
+                </article>
               );
             case "musings":
-              return <p>{w.data.text}</p>;
+              return <p class="musing">{w.data.text}</p>;
           }
         })
       }
     </section>
   </StandardLayout>
 </RootLayout>
+
+<style>
+  .container {
+    padding: 1em 0;
+  }
+
+  .article {
+    margin: 0 1em;
+    margin-bottom: 1em;
+    padding: 0 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .linked-header {
+    display: block;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: palevioletred;
+    color: inherit;
+  }
+
+  .musing {
+    margin: 0 1em;
+    margin-bottom: 1em;
+    padding: 1rem;
+    font-style: italic;
+    text-align: center;
+    background-color: aliceblue;
+  }
+</style>
