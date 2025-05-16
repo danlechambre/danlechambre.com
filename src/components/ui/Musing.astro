@@ -1,0 +1,46 @@
+---
+import "../../styles/musings.css";
+
+import { marked } from "marked";
+
+interface Props {
+  markdownString: string;
+  date: string;
+}
+
+const { markdownString, date } = Astro.props;
+
+const html = await marked.parse(markdownString);
+
+const getDateString = (isoString: string) => {
+  console.log(isoString);
+  const date = new Date(isoString);
+
+  return date.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+---
+
+<div class="musing musing-wrapper">
+  <Fragment set:html={html} />
+  <p class="musing-date">{getDateString(date)}</p>
+</div>
+
+<style>
+  .musing-wrapper {
+    background-color: aliceblue;
+    color: royalblue;
+    font-style: italic;
+    text-align: center;
+    padding: 1.75rem;
+  }
+
+  .musing-date {
+    text-align: right;
+    font-weight: bold;
+    font-size: smaller;
+  }
+</style>

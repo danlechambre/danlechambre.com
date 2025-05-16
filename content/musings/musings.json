@@ -4,5 +4,11 @@
     "createdDate": "2025-02-10",
     "lastUpdatedDate": "2025-02-10",
     "text": "Wrapping third-party libs... I'm yet to see \"we can switch out the library without affecting the rest of the codebase\" actually happen irl"
+  },
+  {
+    "id": "5bf3e8b2-8d5e-40e3-92a7-6e8fd000430c",
+    "createdDate": "2025-05-16",
+    "lastUpdatedDate": "2025-05-16",
+    "text": "Generally when I start a project, I'm incredibly reticent to start thinking about what I _might_ need for fear of [Yagni](https://martinfowler.com/bliki/Yagni.html). Any dev working for any length of time on sufficiently large projects will be all too familiar with building solutions that allow for 'future flexibility'. A future, that inevitably, never arrives, or at least not in the shape you thought it would.\n\nWhat I mostly see is that when you add what you _think_ you're going to need, what you'll end up needing will be _just different enough_ to ensure you have to rebuild the thing anyway. So you may as well just build what you need, when you need it."
   }
 ]

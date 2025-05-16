@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  articleEntry: CollectionEntry<"articles">;
+}
+
+const { articleEntry } = Astro.props;
+
+const getDateString = (isoString: string) => {
+  const date = new Date(isoString);
+
+  return date.toLocaleDateString(undefined, {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+---
+
+<article class="article">
+  <a href={`/writing/${articleEntry.id}`}>
+    <h3>{articleEntry.data.title}</h3>
+  </a>
+  <p>{articleEntry.data.description}</p>
+  <footer>
+    <p>
+      Last updated{" "}
+      <time datetime={articleEntry.data.lastUpdatedDate}>
+        {getDateString(articleEntry.data.lastUpdatedDate)}
+      </time>
+    </p>
+    <a class="read-more" href={`/writing/${articleEntry.id}`}>
+      {"Read more"}
+    </a>
+  </footer>
+</article>

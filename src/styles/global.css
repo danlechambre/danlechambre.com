@@ -54,29 +54,23 @@ select {
   font: inherit;
 }
 
-/* Heading defaults */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-  line-height: 1.1;
-  /* this gives me the heebies but gets us going - would prefer it to be set when needed */
-  margin: 1ex 0 0.5rem;
-}
-
 p {
   text-wrap: pretty;
   word-wrap: break-word;
 }
 
-a:not([class]),
-a:not([class]):visited {
+/* Let's apply the same 'opt-in' styling that Tailwind Preflight uses */
+a {
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+}
+
+/* In 90% of cases when we're just using normal links - what will we want to add back? */
+a:not([class]) {
+  text-decoration: underline;
   text-decoration-skip-ink: auto;
   text-decoration-color: palevioletred;
-  color: inherit;
 }
 
 .sans {

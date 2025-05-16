@@ -1,0 +1,17 @@
+{
+  "Article Frontmatter": {
+    "prefix": "fm-article",
+    "scope": "markdown",
+    "body": [
+      "---",
+      // "title: ${TM_FILENAME_BASE/[\\-]/ /g}",
+      "title:${TM_FILENAME_BASE/(-|^)([a-z])/ ${2:/upcase}/g}",
+      "description: $2",
+      "createdDate: \"${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}\"",
+      "lastUpdatedDate: \"${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}\"",
+      "state: notion",
+      "tags: [\"$3\"]",
+      "---",
+    ],
+  },
+}
