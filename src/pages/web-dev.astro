@@ -1,0 +1,19 @@
+---
+import RootLayout from "@layouts/RootLayout.astro";
+import Article from "@ui/Article.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles", (a) =>
+  a.data.tags.includes("web-dev")
+);
+---
+
+<RootLayout>
+  <main>
+    <p>{"We're creating a specific page for the tag web-dev"}</p>
+    <section>
+      <h2>Articles about web dev</h2>
+      {articles.map((a) => <Article articleEntry={a} />)}
+    </section>
+  </main>
+</RootLayout>
