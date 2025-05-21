@@ -4,6 +4,15 @@ import { Content as WelcomeContent } from "../../content/welcome.md";
 
 import RootLayout from "@layouts/RootLayout.astro";
 import HomeLayout from "@layouts/HomeLayout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+const slashPages = await getCollection("slashPages");
+
+const tags = Array.from(new Set(articles.flatMap((a) => a.data.tags)));
+const slashes = slashPages
+  .map((a) => a.data.slug)
+  .sort((a, b) => (a > b ? 1 : -1));
 ---
 
 <RootLayout>
@@ -17,5 +26,60 @@ import HomeLayout from "@layouts/HomeLayout.astro";
         <WelcomeContent />
       </MdStylesWrapper>
     </section>
+    <!-- Should be an aside really... -->
+    <section>
+      <nav>
+        <h2>Tags</h2>
+        {
+          tags.map((t) => (
+            <a class="tag" href={`/${t}`}>
+              {t}
+            </a>
+          ))
+        }
+      </nav>
+    </section>
+    <section>
+      <nav>
+        <h2>Slash Pages</h2>
+        <div class="slash-container">
+          {
+            slashes.map((s) => (
+              <a class="slash" href={`/${s}`}>
+                {s}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+    </section>
   </HomeLayout>
 </RootLayout>
+
+<style>
+  .tag {
+    display: inline-block;
+    background-color: yellow;
+    margin-inline: 6px;
+    padding-inline: 6px;
+    margin-block-end: 12px;
+  }
+  .slash-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slash:before {
+    content: "/ ";
+    color: magenta;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .slash {
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-color: lightgrey;
+  }
+</style>
