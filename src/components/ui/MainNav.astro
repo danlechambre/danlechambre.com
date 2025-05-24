@@ -1,7 +1,11 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+---
+
 <nav id="main-nav">
-  <a class="main-nav-link sans" href="/about">about</a>
-  <a class="main-nav-link sans" href="/writing">Writing</a>
-  <a class="main-nav-link sans" href="/media-shelf">Media Shelf</a>
+  <ButtonLink to="/about" label="About" />
+  <ButtonLink to="/writing" label="Writing" />
+  <ButtonLink to="/media-shelf" label="Media Shelf" />
 </nav>
 
 <style>

@@ -29,10 +29,6 @@ const params = Astro.params;
 const props = Astro.props;
 ---
 
-<RootLayout>
-  <StandardLayout>
-    <section>
-      {props.articles.map((a) => <Article articleEntry={a} />)}
-    </section>
-  </StandardLayout>
-</RootLayout>
+<StandardLayout>
+  {props.articles.map((a) => <Article articleEntry={a} />)}
+</StandardLayout>
