@@ -1,7 +1,6 @@
 ---
 import StandardLayout from "@layouts/StandardLayout.astro";
 import { getCollection } from "astro:content";
-import RootLayout from "src/layouts/RootLayout.astro";
 
 const books = await getCollection("books");
 const tvShows = await getCollection("tvShows");
@@ -14,101 +13,99 @@ const mediaItems = [...books, ...tvShows, ...films, ...games, ...music].sort(
 );
 ---
 
-<RootLayout>
-  <StandardLayout>
-    {
-      mediaItems.map((item) => {
-        switch (item.collection) {
-          case "books":
-            return (
-              <article>
-                <h3>{item.data.title}</h3>
-                <img
-                  src={item.data.thumbnailSrc}
-                  alt={`Book cover for ${item.data.title}`}
-                />
-                <p>by {item.data.authors.join(", ")}</p>
-                <p>
-                  {"Finished reading "}
-                  <time datetime={item.data.dateCompleted}>
-                    {item.data.dateCompleted}
-                  </time>
-                </p>
-              </article>
-            );
-          case "tvShows":
-            return (
-              <article>
-                <h3>{item.data.title}</h3>
-                <img
-                  src={item.data.imageUrl}
-                  alt={`Cover art for ${item.data.title}`}
-                />
-                <p>
-                  {"Finished watching "}
-                  <time datetime={item.data.dateCompleted}>
-                    {item.data.dateCompleted}
-                  </time>
-                </p>
-              </article>
-            );
-          case "films":
-            return (
-              <article>
-                <h3>{item.data.title}</h3>
-                <img
-                  src={item.data.imageUrl}
-                  alt={`Cover art for ${item.data.title}`}
-                />
-                <p>
-                  {"Finished watching "}
-                  <time datetime={item.data.dateCompleted}>
-                    {item.data.dateCompleted}
-                  </time>
-                </p>
-              </article>
-            );
-          case "games":
-            return (
-              <article>
-                <h3>{item.data.title}</h3>
-                <img
-                  src={item.data.imageUrl}
-                  alt={`Cover art for ${item.data.title}`}
-                />
-                <p>
-                  {"Finished playing "}
-                  <time datetime={item.data.dateCompleted}>
-                    {item.data.dateCompleted}
-                  </time>
-                </p>
-              </article>
-            );
-          case "music":
-            return (
-              <article>
-                <h3>{item.data.title}</h3>
-                <p>{item.data.artists}</p>
-                <img
-                  src={item.data.imageUrl}
-                  alt={`Cover art for ${item.data.title}`}
-                />
-                <p>
-                  {"Released: "}
-                  <time datetime={item.data.releaseDate}>
-                    {item.data.releaseDate}
-                  </time>
-                </p>
-                <p>
-                  {"First heard "}
-                  <time datetime={item.data.dateCompleted}>
-                    {item.data.dateCompleted}
-                  </time>
-                </p>
-              </article>
-            );
-        }
-      })
-    }
-  </StandardLayout>
-</RootLayout>
+<StandardLayout>
+  {
+    mediaItems.map((item) => {
+      switch (item.collection) {
+        case "books":
+          return (
+            <article>
+              <h3>{item.data.title}</h3>
+              <img
+                src={item.data.thumbnailSrc}
+                alt={`Book cover for ${item.data.title}`}
+              />
+              <p>by {item.data.authors.join(", ")}</p>
+              <p>
+                {"Finished reading "}
+                <time datetime={item.data.dateCompleted}>
+                  {item.data.dateCompleted}
+                </time>
+              </p>
+            </article>
+          );
+        case "tvShows":
+          return (
+            <article>
+              <h3>{item.data.title}</h3>
+              <img
+                src={item.data.imageUrl}
+                alt={`Cover art for ${item.data.title}`}
+              />
+              <p>
+                {"Finished watching "}
+                <time datetime={item.data.dateCompleted}>
+                  {item.data.dateCompleted}
+                </time>
+              </p>
+            </article>
+          );
+        case "films":
+          return (
+            <article>
+              <h3>{item.data.title}</h3>
+              <img
+                src={item.data.imageUrl}
+                alt={`Cover art for ${item.data.title}`}
+              />
+              <p>
+                {"Finished watching "}
+                <time datetime={item.data.dateCompleted}>
+                  {item.data.dateCompleted}
+                </time>
+              </p>
+            </article>
+          );
+        case "games":
+          return (
+            <article>
+              <h3>{item.data.title}</h3>
+              <img
+                src={item.data.imageUrl}
+                alt={`Cover art for ${item.data.title}`}
+              />
+              <p>
+                {"Finished playing "}
+                <time datetime={item.data.dateCompleted}>
+                  {item.data.dateCompleted}
+                </time>
+              </p>
+            </article>
+          );
+        case "music":
+          return (
+            <article>
+              <h3>{item.data.title}</h3>
+              <p>{item.data.artists}</p>
+              <img
+                src={item.data.imageUrl}
+                alt={`Cover art for ${item.data.title}`}
+              />
+              <p>
+                {"Released: "}
+                <time datetime={item.data.releaseDate}>
+                  {item.data.releaseDate}
+                </time>
+              </p>
+              <p>
+                {"First heard "}
+                <time datetime={item.data.dateCompleted}>
+                  {item.data.dateCompleted}
+                </time>
+              </p>
+            </article>
+          );
+      }
+    })
+  }
+</StandardLayout>

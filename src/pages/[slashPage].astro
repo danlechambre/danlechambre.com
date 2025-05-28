@@ -1,9 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import RootLayout from "../layouts/RootLayout.astro";
+import RootLayout from "@layouts/RootLayout.astro";
 import { render } from "astro:content";
 import MdStylesWrapper from "src/components/MdStylesWrapper.astro";
+import StandardLayout from "@layouts/StandardLayout.astro";
 
 interface Props {
   slashPage: CollectionEntry<"slashPages">;
@@ -23,10 +24,8 @@ const { slashPage } = Astro.props;
 const { Content } = await render(slashPage);
 ---
 
-<RootLayout>
-  <main>
-    <MdStylesWrapper>
-      <Content />
-    </MdStylesWrapper>
-  </main>
-</RootLayout>
+<StandardLayout>
+  <MdStylesWrapper>
+    <Content />
+  </MdStylesWrapper>
+</StandardLayout>

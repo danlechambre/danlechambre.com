@@ -1,0 +1,68 @@
+---
+
+---
+
+<div class="layout-wrapper">
+  <div class="center-col">
+    <slot name="center-col" />
+  </div>
+  <div class="right-col">
+    <slot name="right-col" />
+  </div>
+  <div class="left-col">
+    <slot name="left-col" />
+  </div>
+</div>
+
+<style>
+  .layout-wrapper {
+    display: grid;
+    gap: 1em;
+  }
+
+  @media screen and (min-width: 670px) {
+    .layout-wrapper {
+      grid-template-columns: 1fr 12rem;
+      grid-template-rows: auto 1fr auto; /* Add this line */
+      grid-template-areas:
+        "main right-top"
+        "main right-bottom"
+        "after-main-start after-main-end";
+    }
+
+    .center-col {
+      grid-area: main;
+    }
+
+    /* Not exactly what we want but will do for now */
+    .left-col {
+      grid-area: after-main-start;
+    }
+
+    .right-col {
+      grid-area: right-top;
+      position: sticky;
+      top: 5ex;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .layout-wrapper {
+      grid-template-columns: minmax(12rem, 1fr) minmax(auto, 80ch) minmax(
+          12rem,
+          1fr
+        );
+      grid-template-areas:
+        "left-top main right-top"
+        "left-bottom main right-bottom";
+    }
+
+    .left-col {
+      translate: 0 50%;
+      grid-area: left-top;
+      justify-items: end;
+      position: sticky;
+      top: 10ex;
+    }
+  }
+</style>

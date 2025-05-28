@@ -1,85 +1,47 @@
 ---
 import MdStylesWrapper from "src/components/MdStylesWrapper.astro";
+
 import { Content as WelcomeContent } from "../../content/welcome.md";
 
 import RootLayout from "@layouts/RootLayout.astro";
-import HomeLayout from "@layouts/HomeLayout.astro";
-import { getCollection } from "astro:content";
+import ThreeColLayout from "@layouts/ThreeColLayout.astro";
 
-const articles = await getCollection("articles");
-const slashPages = await getCollection("slashPages");
-
-const tags = Array.from(new Set(articles.flatMap((a) => a.data.tags)));
-const slashes = slashPages
-  .map((a) => a.data.slug)
-  .sort((a, b) => (a > b ? 1 : -1));
+import SlashPageNav from "@ui/SlashPageNav.astro";
+import TagsNav from "@ui/TagsNav.astro";
+import StandardLayout from "@layouts/StandardLayout.astro";
 ---
 
-<RootLayout>
-  <HomeLayout>
-    <section>
-      <header class="sr-only">
-        <h1>Dan Le Chambre</h1>
-        <p>Crafting Delightful Digital Experiences</p>
-      </header>
-      <MdStylesWrapper>
-        <WelcomeContent />
-      </MdStylesWrapper>
-    </section>
-    <!-- Should be an aside really... -->
-    <section>
-      <nav>
-        <h2>Tags</h2>
-        {
-          tags.map((t) => (
-            <a class="tag" href={`/${t}`}>
-              {t}
-            </a>
-          ))
-        }
-      </nav>
-    </section>
-    <section>
-      <nav>
-        <h2>Slash Pages</h2>
-        <div class="slash-container">
-          {
-            slashes.map((s) => (
-              <a class="slash" href={`/${s}`}>
-                {s}
-              </a>
-            ))
-          }
-        </div>
-      </nav>
-    </section>
-  </HomeLayout>
-</RootLayout>
+<StandardLayout>
+  <header class="sr-only">
+    <h1>Dan Le Chambre</h1>
+    <p>Crafting Delightful Digital Experiences</p>
+  </header>
+  <MdStylesWrapper>
+    <div class="content">
+      <WelcomeContent />
+    </div>
+  </MdStylesWrapper>
+</StandardLayout>
 
 <style>
-  .tag {
-    display: inline-block;
-    background-color: yellow;
-    margin-inline: 6px;
-    padding-inline: 6px;
-    margin-block-end: 12px;
-  }
-  .slash-container {
-    display: flex;
-    flex-direction: column;
+  .content {
+    padding: 0.5rem 1.2rem;
+    text-align: center;
   }
 
-  .slash:before {
-    content: "/ ";
-    color: magenta;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
+  @media screen and (min-width: 670px) {
+    .content {
+      text-align: initial;
+      max-width: 60ch;
+      place-self: end;
+    }
   }
 
-  .slash {
-    display: inline-block;
-    text-decoration: underline;
-    text-decoration-color: lightgrey;
+  @media screen and (min-width: 1024px) {
+    .content {
+      margin: 0 auto;
+      margin-top: 2.5rem;
+      place-self: initial;
+    }
   }
 </style>

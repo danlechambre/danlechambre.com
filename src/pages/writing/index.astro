@@ -2,10 +2,13 @@
 import { getCollection } from "astro:content";
 
 import RootLayout from "@layouts/RootLayout.astro";
-import StandardLayout from "@layouts/StandardLayout.astro";
+import ThreeColLayout from "@layouts/ThreeColLayout.astro";
 
 import Article from "@ui/Article.astro";
 import Musing from "@ui/Musing.astro";
+import SlashPageNav from "@ui/SlashPageNav.astro";
+import TagsNav from "@ui/TagsNav.astro";
+import StandardLayout from "@layouts/StandardLayout.astro";
 
 // We want to collect together 'articles' and 'musings' (tweet-like thought and ideation with no intention to turn it into an article)
 
@@ -16,32 +19,28 @@ const articles = await getCollection("articles");
 const musings = await getCollection("musings");
 
 const writing = [...articles, ...musings].sort((a, b) =>
-  a.data.createdDate > b.data.createdDate ? -1 : 1,
+  a.data.createdDate > b.data.createdDate ? -1 : 1
 );
 ---
 
-<RootLayout>
-  <StandardLayout>
-    <section class="container">
-      {
-        writing.map((w) => () => {
-          switch (w.collection) {
-            case "articles":
-              return <Article articleEntry={w} />;
-            case "musings":
-              return (
-                <Musing
-                  markdownString={w.data.text}
-                  date={w.data.lastUpdatedDate}
-                />
-              );
-          }
-        })
+<StandardLayout>
+  {
+    writing.map((w) => () => {
+      switch (w.collection) {
+        case "articles":
+          return <Article articleEntry={w} />;
+        case "musings":
+          return (
+            <Musing
+              markdownString={w.data.text}
+              date={w.data.lastUpdatedDate}
+            />
+          );
       }
-    </section>
-  </StandardLayout>
-</RootLayout>
-
+    })
+  }
+</StandardLayout>
+<!-- 
 <style>
   .container {
     padding: 1em 0;
@@ -69,4 +68,4 @@ const writing = [...articles, ...musings].sort((a, b) =>
     text-align: center;
     background-color: aliceblue;
   }
-</style>
+</style> -->

@@ -1,0 +1,31 @@
+---
+import SlashPageNav from "@ui/SlashPageNav.astro";
+import TagsNav from "@ui/TagsNav.astro";
+
+import RootLayout from "./RootLayout.astro";
+import ThreeColLayout from "./ThreeColLayout.astro";
+---
+
+<RootLayout>
+  <ThreeColLayout>
+    <main slot="center-col">
+      <slot />
+    </main>
+    <aside class="aside" slot="right-col">
+      <SlashPageNav />
+      <TagsNav />
+    </aside>
+  </ThreeColLayout>
+</RootLayout>
+
+<style>
+  .aside {
+    display: flex;
+  }
+  @media screen and (min-width: 670px) {
+    .aside {
+      display: initial;
+      margin-top: 1rem;
+    }
+  }
+</style>
