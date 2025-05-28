@@ -5,11 +5,13 @@ import booksJson from "content/media-shelf/books.json";
 import tvShowsJson from "content/media-shelf/tvShows.json";
 import filmsJson from "content/media-shelf/films.json";
 import gamesJson from "content/media-shelf/games.json";
+import musicJson from "content/media-shelf/music.json";
 
 import { bookLoader } from "./content-helpers/books";
 import { tvShowLoader } from "./content-helpers/tv";
 import { filmLoader } from "./content-helpers/film";
 import { gameLoader } from "./content-helpers/game";
+import { musicLoader } from "./content-helpers/music";
 
 const articles = defineCollection({
   loader: glob({ pattern: ["*.md", "*.mdx"], base: "content/articles" }),
@@ -79,6 +81,18 @@ const games = defineCollection({
   }),
 });
 
+const music = defineCollection({
+  loader: () => musicLoader(musicJson),
+  schema: z.object({
+    title: z.string(),
+    imageUrl: z.string().url(),
+    dateCompleted: z.any(),
+    releaseDate: z.string(),
+    artists: z.string(),
+    label: z.string(),
+  }),
+});
+
 export const collections = {
   articles,
   slashPages,
@@ -87,4 +101,5 @@ export const collections = {
   tvShows,
   films,
   games,
+  music,
 };

@@ -7,9 +7,10 @@ const books = await getCollection("books");
 const tvShows = await getCollection("tvShows");
 const films = await getCollection("films");
 const games = await getCollection("games");
+const music = await getCollection("music");
 
-const mediaItems = [...books, ...tvShows, ...films, ...games].sort((a, b) =>
-  a.data.dateCompleted > b.data.dateCompleted ? -1 : 1
+const mediaItems = [...books, ...tvShows, ...films, ...games, ...music].sort(
+  (a, b) => (a.data.dateCompleted > b.data.dateCompleted ? -1 : 1),
 );
 ---
 
@@ -77,6 +78,29 @@ const mediaItems = [...books, ...tvShows, ...films, ...games].sort((a, b) =>
                 />
                 <p>
                   {"Finished playing "}
+                  <time datetime={item.data.dateCompleted}>
+                    {item.data.dateCompleted}
+                  </time>
+                </p>
+              </article>
+            );
+          case "music":
+            return (
+              <article>
+                <h3>{item.data.title}</h3>
+                <p>{item.data.artists}</p>
+                <img
+                  src={item.data.imageUrl}
+                  alt={`Cover art for ${item.data.title}`}
+                />
+                <p>
+                  {"Released: "}
+                  <time datetime={item.data.releaseDate}>
+                    {item.data.releaseDate}
+                  </time>
+                </p>
+                <p>
+                  {"First heard "}
                   <time datetime={item.data.dateCompleted}>
                     {item.data.dateCompleted}
                   </time>
