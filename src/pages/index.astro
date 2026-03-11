@@ -1,18 +1,10 @@
 ---
-
+import { Content as WelcomeContent } from "@content/home-welcome.md";
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import SlashPageNav from "@components/SlashPageNav.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>dan le chambre</title>
-  </head>
-  <body>
-    <h1>Dan Le Chambre</h1>
-    <p>Hello continuous deployment!</p>
-  </body>
-</html>
+<DefaultLayout title="welcome">
+  <WelcomeContent slot="main" />
+  <SlashPageNav slot="secondary" />
+</DefaultLayout>

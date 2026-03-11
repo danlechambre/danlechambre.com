@@ -1,0 +1,34 @@
+---
+import SlashPageNav from "@components/SlashPageNav.astro";
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+interface Props {
+  piece: CollectionEntry<"writing">;
+}
+
+export async function getStaticPaths() {
+  const writing = await getCollection("writing");
+
+  return writing.map((piece) => ({
+    params: { slug: piece.id },
+    props: { piece },
+  }));
+}
+
+const { piece } = Astro.props;
+
+const { Content } = await render(piece);
+---
+
+<DefaultLayout title={piece.data.title}>
+  <div slot="main">
+    <h1>
+      {piece.data.title}
+    </h1>
+    <Content />
+  </div>
+  <div slot="secondary">
+    <SlashPageNav />
+  </div>
+</DefaultLayout>

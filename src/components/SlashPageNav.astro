@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+
+const slashPages = await getCollection("slashPages");
+---
+
+<nav aria-labelledby="nav-pages">
+  <h2 id="nav-pages"><span class="sr-only">Slash </span>Pages</h2>
+  {slashPages.map((p) => <a href={`/${p.data.slug}`}>{p.data.slug}</a>)}
+</nav>

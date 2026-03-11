@@ -1,0 +1,45 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import { render } from "astro:content";
+import SlashPageNav from "@components/SlashPageNav.astro";
+import { manuallyBuiltSlugs } from "@utils/content";
+
+interface Props {
+  page: CollectionEntry<"slashPages">;
+}
+
+export async function getStaticPaths() {
+  const collection = await getCollection("slashPages");
+
+  const filtered = collection.filter(
+    (x) => !([...manuallyBuiltSlugs] as Array<string>).includes(x.data.slug),
+  );
+
+  return filtered.map((entry) => ({
+    params: {
+      slug: entry.data.slug,
+    },
+    props: {
+      page: entry,
+    },
+  }));
+}
+
+const { page } = Astro.props;
+
+const { Content } = await render(page);
+---
+
+<DefaultLayout title={page.data.slug}>
+  <div slot="main">
+    <h1>
+      {page.data.title}
+    </h1>
+    <Content />
+    <div slot="secondary">
+      <SlashPageNav />
+    </div>
+  </div>
+</DefaultLayout>
