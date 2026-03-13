@@ -1,0 +1,51 @@
+---
+import { getDateString } from "@utils/date";
+import type { CollectionEntry } from "astro:content";
+import DisplayHeading from "./DisplayHeading.astro";
+
+interface Props {
+  entry: CollectionEntry<"writing">;
+}
+
+const props = Astro.props;
+---
+
+<article class="article-listing">
+  <a class="article-listing_link" href={`/writing/${props.entry.id}`}>
+    <h3></h3>
+    <DisplayHeading as="h3" size={2}>{props.entry.data.title}</DisplayHeading>
+  </a>
+  <p>{props.entry.data.description}</p>
+  <footer>
+    <p>
+      {"Last updated "}
+      <time datetime={props.entry.data.lastUpdatedDate}>
+        {getDateString(props.entry.data.lastUpdatedDate)}
+      </time>
+    </p>
+    <a class="article-listing_footer-link" href={`/writing/${props.entry.id}`}
+      >Read More</a
+    >
+  </footer>
+</article>
+
+<style>
+  .article-listing {
+  }
+
+  .article-listing_link {
+    color: currentColor;
+  }
+
+  .article-listing_footer-link {
+    font-family: var(--font-display);
+    font-size: var(--text-size--2);
+    font-weight: 900;
+    color: currentColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    background-color: black;
+    color: white;
+  }
+</style>

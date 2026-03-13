@@ -1,0 +1,84 @@
+.md_wrapper > * + * {
+  margin-block-start: var(--space-1);
+}
+
+.md_wrapper h2,
+.md_wrapper h3,
+.md_wrapper h4,
+.md_wrapper h5,
+.md_wrapper h6 {
+  letter-spacing: -0.05rem;
+  word-spacing: 0.1rem;
+}
+
+.md_wrapper h2 {
+  font-size: var(--text-size-3);
+}
+.md_wrapper h3 {
+  font-size: var(--text-size-1);
+}
+.md_wrapper h4,
+.md_wrapper h5,
+.md_wrapper h6 {
+  font-size: var(--text-size-0);
+}
+
+/* Styles for Markdown Directives */
+.md_inline-list h4 {
+  display: inline;
+}
+
+.md_inline-list h4::after {
+  content: ":";
+}
+
+.md_inline-list > * + * {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.md_inline-list > ul > li {
+  display: inline;
+}
+
+.md_inline-list > ul > :not(li:last-of-type)::after {
+  content: ",";
+}
+
+.md_screenplay {
+  font-family: Courier, monospace;
+  font-size: var(--text-size--1);
+  max-width: 72ch;
+  margin: auto;
+}
+
+.md_screenplay_transition {
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.md_screenplay_heading {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.md_screenplay_action {
+  max-width: 55ch;
+}
+
+.md_screenplay_character {
+  text-align: center;
+  text-transform: uppercase;
+  margin-block-end: 0;
+}
+
+.md_screenplay_paren {
+  max-width: 24ch;
+  margin: 0 auto;
+}
+
+.md_screenplay_dialogue {
+  max-width: 35ch;
+  margin: auto;
+}

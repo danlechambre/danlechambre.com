@@ -12,7 +12,7 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 
 ### Full-Stack TypeScript Engineer at Hark by SolarEdge
 
-Jul 2023 - Mar 2026
+::subtitle[Jul 2023 - Mar 2026]
 
 - Embedded a culture of frontend engineering rigour within a full-stack team, advocating for compositional thinking, consistent abstractions, design integration, and challenging throwaway UI decisions, resulting in a more consistent, scalable UI.
 - Built complex interfaces: analytics dashboards, rule builders, IoT onboarding workflows, optimising for performance across tens of thousands of data points and hundreds of assets.
@@ -21,12 +21,15 @@ Jul 2023 - Mar 2026
 - Independently prototyped an LLM integration with a tool orchestration layer and real-time UI, demonstrating viability of AI features and challenging assumptions about the platform's capabilities.
 - Led complex enterprise delivery, translating incomplete requirements into scoped solutions, making pragmatic trade-offs, and maintaining alignment between delivery and customer commitments.
 
+:::inline-list
+
 #### Tech
 
 - TypeScript
 - React
 - Node.js
 - Zod + tRPC
+  :::
 
 ### Lead Developer at Why Grief Matters (voluntary, part-time)
 
@@ -37,6 +40,8 @@ Jan 2023 - Mar 2026
 - Extended the platform with Cloudflare Workers-powered capabilities including broken link reporting and on-demand deployment, going beyond the initial brief to build operational resilience.
 - Onboarded and mentored volunteer developers of varying experience, building a small contributor community around the project.
 
+:::inline-list
+
 #### Tech
 
 - Astro
@@ -44,6 +49,7 @@ Jan 2023 - Mar 2026
 - Web Components
 - Cloudflare Workers
 - Tailwind
+  :::
 
 ### Lead Frontend Developer at RAIDLOG.com (via StyleTech Solutions)
 
@@ -54,11 +60,14 @@ Apr 2022 - Apr 2023
 - Owned all third-party integrations across the frontend, including Stripe for subscription and payment management, Lexical for rich text editing, and an LLM-powered risk register generator.
 - Worked closely with founder and Product Manager to establish structured work tracking via GitHub Issues and Projects, shaping how work was planned and delivered, bringing predictability to sprint planning as the product moved toward launch.
 
+:::inline-list
+
 #### Tech
 
 - TypeScript
 - React
 - MUI
+  :::
 
 ### Software Developer at StyleTech Solutions
 
@@ -66,6 +75,8 @@ Dec 2020 - Apr 2023
 
 - Developed strong frontend specialisation whilst delivering across a variety of client projects spanning healthcare, sports coaching, logistics and beyond.
 - Built a WCAG 2.1 AA compliant frontend for a public health organisation, applying accessibility standards across forms, navigation, and content structure.
+
+:::inline-list
 
 #### Tech
 
@@ -75,3 +86,5 @@ Dec 2020 - Apr 2023
 - WPF
 - .NET
 - MS SQL
+
+:::

@@ -19,35 +19,48 @@ function leafWithClass(className: string): LeafHandler {
   };
 }
 
+const leafRegistry: Record<string, LeafHandler> = {
+  subtitle: leafWithClass("md_subtitle"),
+};
+
 const registry: Record<string, DirectiveDefinition> = {
   screenplay: {
     container: (node, data) => {
       data.hName = "div";
       data.hProperties = h("div", {
-        class: "screenplay",
+        class: "md_screenplay",
         ...node.attributes,
       }).properties;
     },
     leaves: {
-      heading: leafWithClass("heading"),
-      paren: leafWithClass("paren"),
-      transition: leafWithClass("transition"),
-      action: leafWithClass("action"),
-      character: leafWithClass("character"),
-      dialogue: leafWithClass("dialogue"),
+      heading: leafWithClass("md_screenplay_heading"),
+      paren: leafWithClass("md_screenplay_paren"),
+      transition: leafWithClass("md_screenplay_transition"),
+      action: leafWithClass("md_screenplay_action"),
+      character: leafWithClass("md_screenplay_character"),
+      dialogue: leafWithClass("md_screenplay_dialogue"),
     },
   },
   "code-snippet": {
     container: (node, data) => {
       data.hName = "div";
       data.hProperties = h("div", {
-        class: "code-snippet",
+        class: "md_code-snippet",
         ...node.attributes,
       }).properties;
     },
     leaves: {
-      title: leafWithClass("snippet-title"),
-      lang: leafWithClass("snippet-lang"),
+      title: leafWithClass("md_code-snippet_title"),
+      lang: leafWithClass("md_code-snippet_lang"),
+    },
+  },
+  "inline-list": {
+    container: (node, data) => {
+      data.hName = "div";
+      data.hProperties = h("div", {
+        class: "md_inline-list",
+        ...node.attributes,
+      }).properties;
     },
   },
 };
@@ -65,6 +78,12 @@ export function processDirectivesPlugin() {
       }
 
       if (node.type === "leafDirective") {
+        if (leafRegistry[node.name]) {
+          const data = node.data || (node.data = {});
+          leafRegistry[node.name](node, data);
+          return;
+        }
+
         if (
           parent?.type === "containerDirective" &&
           registry[parent.name]?.leaves?.[node.name]

@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+const slashPages = await getCollection("slashPages");
+---
+
+<nav class="slash-page-nav">
+  <h2><span class="sr-only">Slash </span>Pages</h2>
+  {
+    slashPages.map((p) => (
+      <a class="slash-page-nav_link" href={`/${p.data.slug}`}>
+        {p.data.slug}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: var(--text-size--1);
+
+    &:before {
+      content: "\2044";
+      font-family: var(--font-display);
+      color: lightgray;
+    }
+  }
+
+  .slash-page-nav_link {
+    display: block;
+    line-height: 1.1;
+    font-family: Courier, monospace;
+    color: currentColor;
+    font-size: var(--text-size-0);
+  }
+</style>

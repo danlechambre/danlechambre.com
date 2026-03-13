@@ -1,7 +1,10 @@
 ---
-import SlashPageNav from "@components/SlashPageNav.astro";
-import DefaultLayout from "@layouts/DefaultLayout.astro";
+import SlashPageNav from "@components/ui/SlashPageNav.astro";
+import DefaultLayout from "@components/layouts/DefaultLayout.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
+import MarkdownStylesWrapper from "@components/ui/MarkdownStylesWrapper.astro";
+import DisplayHeading from "@components/ui/DisplayHeading.astro";
+import Subtitle from "@components/ui/Subtitle.astro";
 
 interface Props {
   piece: CollectionEntry<"writing">;
@@ -23,10 +26,15 @@ const { Content } = await render(piece);
 
 <DefaultLayout title={piece.data.title}>
   <div slot="main">
-    <h1>
+    <DisplayHeading as="h1" size={4}>
       {piece.data.title}
-    </h1>
-    <Content />
+    </DisplayHeading>
+    <Subtitle>
+      {piece.data.description}
+    </Subtitle>
+    <MarkdownStylesWrapper>
+      <Content />
+    </MarkdownStylesWrapper>
   </div>
   <div slot="secondary">
     <SlashPageNav />

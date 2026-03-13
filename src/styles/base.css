@@ -1,0 +1,130 @@
+:root {
+  /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.2,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --text-size--2: clamp(0.7813rem, 0.7457rem + 0.1578vw, 0.8681rem);
+  --text-size--1: clamp(0.9375rem, 0.8949rem + 0.1894vw, 1.0417rem);
+  --text-size-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --text-size-1: clamp(1.35rem, 1.2886rem + 0.2727vw, 1.5rem);
+  --text-size-2: clamp(1.62rem, 1.5464rem + 0.3273vw, 1.8rem);
+  --text-size-3: clamp(1.944rem, 1.8556rem + 0.3927vw, 2.16rem);
+  --text-size-4: clamp(2.3328rem, 2.2268rem + 0.4713vw, 2.592rem);
+  /* --text-size-5: clamp(2.7994rem, 2.6721rem + 0.5655vw, 3.1104rem); */
+
+  /* @link https://utopia.fyi/space/calculator?c=360,18,1.2,1240,20,1.2,5,2,&s=0.75,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-0: clamp(0.875rem, 0.8494rem + 0.1136vw, 0.9375rem);
+  --space-1: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --space-2: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
+  --space-3: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
+  --space-4: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
+  --space-5: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+  --space-6: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-0-1: clamp(0.875rem, 0.7216rem + 0.6818vw, 1.25rem);
+  --space-1-2: clamp(1.125rem, 0.8182rem + 1.3636vw, 1.875rem);
+  --space-2-3: clamp(1.6875rem, 1.3551rem + 1.4773vw, 2.5rem);
+  --space-3-4: clamp(2.25rem, 1.6364rem + 2.7273vw, 3.75rem);
+  --space-4-5: clamp(3.375rem, 2.7102rem + 2.9545vw, 5rem);
+  --space-5-6: clamp(4.5rem, 3.2727rem + 5.4545vw, 7.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/*
+/* Sensible typography defaults 
+*/
+
+html {
+  line-height: 1.7;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  hanging-punctuation: first allow-end last;
+  word-break: break-word;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-0);
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Animation/transitions */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* More opinionated defaults */
+html {
+  color-scheme: light dark;
+}
+
+a:not([class]) {
+  color: currentColor;
+  text-underline-offset: 0.125rem;
+}

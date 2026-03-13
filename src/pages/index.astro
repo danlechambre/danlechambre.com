@@ -1,10 +1,19 @@
 ---
 import { Content as WelcomeContent } from "@content/home-welcome.md";
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import SlashPageNav from "@components/SlashPageNav.astro";
+import DefaultLayout from "@components/layouts/DefaultLayout.astro";
+import SlashPageNav from "@components/ui/SlashPageNav.astro";
+import MarkdownStylesWrapper from "@components/ui/MarkdownStylesWrapper.astro";
 ---
 
 <DefaultLayout title="welcome">
-  <WelcomeContent slot="main" />
+  <MarkdownStylesWrapper slot="main">
+    <WelcomeContent />
+  </MarkdownStylesWrapper>
   <SlashPageNav slot="secondary" />
 </DefaultLayout>
+
+<style>
+  .body-text {
+    font-family: var(--font-serif);
+  }
+</style>

@@ -9,3 +9,27 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+.text-size--1 {
+  font-size: var(--text-size--1);
+}
+
+.text-size-0 {
+  font-size: var(--text-size-0);
+}
+
+.text-size-1 {
+  font-size: var(--text-size-1);
+}
+
+.text-size-2 {
+  font-size: var(--text-size-2);
+}
+
+.text-size-3 {
+  font-size: var(--text-size-3);
+}
+
+.text-size-4 {
+  font-size: var(--text-size-4);
+}

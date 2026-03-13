@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 
 import { getDateString } from "@utils/date";
 
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import SlashPageNav from "@components/SlashPageNav.astro";
+import DefaultLayout from "@components/layouts/DefaultLayout.astro";
+import SlashPageNav from "@components/ui/SlashPageNav.astro";
+import ArticleListing from "@components/ui/ArticleListing.astro";
 
 const writing = await getCollection("writing");
 
@@ -15,25 +16,7 @@ const content = [...writing].sort((a, b) =>
 
 <DefaultLayout title="writing">
   <div slot="main">
-    {
-      content.map((c) => (
-        <article>
-          <a href={`/writing/${c.id}`}>
-            <h3>{c.data.title}</h3>
-          </a>
-          <p>{c.data.description}</p>
-          <footer>
-            <p>
-              {"Last updated "}
-              <time datetime={c.data.lastUpdatedDate}>
-                {getDateString(c.data.lastUpdatedDate)}
-              </time>
-            </p>
-            <a href={`/writing/${c.id}`}>Read More</a>
-          </footer>
-        </article>
-      ))
-    }
+    {content.map((c) => <ArticleListing entry={c} />)}
   </div>
   <div slot="secondary">
     <SlashPageNav />

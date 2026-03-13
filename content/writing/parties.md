@@ -43,7 +43,7 @@ I think far too much about how we tend to define ourselves by our jobs. This can
 
 ::dialogue[Hehe! Well that's not... yeah... probably]
 
-::action[ALICE take a few sips with an awkward pause between each]
+::action[Alice, takes a few sips with an awkward pause between each, looking around for someone to interrupt]
 
 ::character[ALICE]
 
@@ -55,11 +55,7 @@ I'm sure we've all been there. And we all know just how painfully awkward it can
 
 :::screenplay
 
-::transition[Scene rewinds to start:]
-
-::heading[Int. A Middle-class Millenial's House - Kitchen (probably) - Night]
-
-::action[Strangers loosely affiliated to one another via the host mill around trying not to look as awkward as they feel, looking for (or perhaps avoiding) someone to talk to. BOB bumps into ALICE at the fridge, whilst they are both getting a drink.]
+::transition[Flash Rewind:]
 
 ::character[Bob]
 
@@ -67,7 +63,7 @@ I'm sure we've all been there. And we all know just how painfully awkward it can
 
 ::character[Alice]
 
-::paren[(slightly startled, taken a aback)]
+::paren[(slightly startled)]
 
 ::dialogue[Gee, I, erm, I'm big in to climbing actually]
 
@@ -81,7 +77,7 @@ I'm sure we've all been there. And we all know just how painfully awkward it can
 
 ::dialogue[Ha! Not quite, I'd love to do that someday though. I mostly just stay around Yorkshire]
 
-::action[ALICE puts her drink down on the side]
+::action[Alice, puts her drink down on the side]
 
 ::character[ALICE]
 

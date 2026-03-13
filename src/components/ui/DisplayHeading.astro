@@ -1,0 +1,36 @@
+---
+import type { Polymorphic } from "astro/types";
+
+type HeaderHTMLTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+type HeaderSize = 0 | 1 | 2 | 3 | 4;
+
+type DisplayHeadingProps = {
+  as: HeaderHTMLTag;
+  size: HeaderSize;
+};
+
+type Props = Polymorphic<DisplayHeadingProps>;
+
+const { as: Tag = "h1", size, style, ...attrs } = Astro.props;
+
+const headerSizeToCssVarMap: Record<HeaderSize, string> = {
+  0: "text-size-0",
+  1: "text-size-1",
+  2: "text-size-2",
+  3: "text-size-3",
+  4: "text-size-4",
+};
+---
+
+<Tag class:list={[headerSizeToCssVarMap[size], "display-heading"]} {...attrs}>
+  <slot />
+</Tag>
+
+<style>
+  .display-heading {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.05rem;
+    word-spacing: 0.25rem;
+  }
+</style>

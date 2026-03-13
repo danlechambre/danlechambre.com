@@ -1,0 +1,42 @@
+---
+import MainNav from "./MainNav.astro";
+---
+
+<header class="site-header">
+  <a href="/">
+    <svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+      <text class="site-header_text-underlay" x="20" y="70">DanLeChambre</text>
+      <text class="site-header_text" x="20" y="70">DanLeChambre</text>
+    </svg>
+  </a>
+  <MainNav />
+</header>
+
+<style>
+  .site-header {
+    background-color: #eee;
+  }
+
+  .site-header_text {
+    fill: white;
+  }
+
+  .site-header_text-underlay {
+    stroke: black;
+    stroke-width: 1px;
+  }
+
+  .site-header_text,
+  .site-header_text-underlay {
+    font-weight: 900;
+    font-family: var(--font-display);
+    font-size: 36px;
+  }
+
+  @media (width >= 40rem) {
+    .site-header_text,
+    .site-header_text-underlay {
+      font-size: 24px;
+    }
+  }
+</style>
