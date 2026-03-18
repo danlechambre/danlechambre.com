@@ -5,11 +5,34 @@ import "@styles/cv.css";
 import SlashPageNav from "@components/ui/SlashPageNav.astro";
 import DefaultLayout from "@components/layouts/DefaultLayout.astro";
 import { Content as CvContent } from "@content/slash-pages/cv.md";
+
+const cvFilename = "dan-chambers-cv.pdf";
 ---
 
 <DefaultLayout title="cv">
   <div class="cv_wrapper stack-gap-3-6" slot="main">
+    <a
+      class="download-button"
+      href={`/assets/${cvFilename}`}
+      download={"dan-chambers-cv.pdf"}
+    >
+      {"Download PDF"}
+    </a>
     <CvContent />
   </div>
   <SlashPageNav slot="secondary" />
 </DefaultLayout>
+
+<style>
+  .download-button {
+    font-family: Courier, monospace;
+    color: currentColor;
+    text-decoration-color: var(--color-red);
+  }
+
+  @media print {
+    .download-button {
+      display: none;
+    }
+  }
+</style>

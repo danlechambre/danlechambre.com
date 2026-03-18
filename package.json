@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen:pdf": "astro build && node scripts/generate-cv-pdf.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.0",
@@ -14,6 +15,7 @@
     "remark-directive": "^4.0.0"
   },
   "devDependencies": {
+    "playwright": "^1.58.2",
     "prettier": "3.8.1"
   }
 }
