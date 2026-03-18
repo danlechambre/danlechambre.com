@@ -1,4 +1,9 @@
 :root {
+  --color-white: oklch(98.809% 0.00011 271.152);
+  --color-black: oklch(31.671% 0.06307 103.042);
+  --color-grey: oklch(81.957% 0.02731 102.359);
+  --color-yellow: oklch(90.057% 0.18651 101.829);
+
   /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.2,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   --text-size--2: clamp(0.7813rem, 0.7457rem + 0.1578vw, 0.8681rem);
   --text-size--1: clamp(0.9375rem, 0.8949rem + 0.1894vw, 1.0417rem);
@@ -9,22 +14,34 @@
   --text-size-4: clamp(2.3328rem, 2.2268rem + 0.4713vw, 2.592rem);
   /* --text-size-5: clamp(2.7994rem, 2.6721rem + 0.5655vw, 3.1104rem); */
 
-  /* @link https://utopia.fyi/space/calculator?c=360,18,1.2,1240,20,1.2,5,2,&s=0.75,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-  --space-0: clamp(0.875rem, 0.8494rem + 0.1136vw, 0.9375rem);
-  --space-1: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  --space-2: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
-  --space-3: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
-  --space-4: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
-  --space-5: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
-  --space-6: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
+  --width-reading: 43rem;
+
+  /* @link https://utopia.fyi/space/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-0: 0;
+
+  --space-1: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2: clamp(0.5625rem, 0.5369rem + 0.1136vw, 0.625rem);
+  --space-3: clamp(0.875rem, 0.8494rem + 0.1136vw, 0.9375rem);
+  --space-4: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --space-5: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
+  --space-6: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
+  --space-7: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
+  --space-8: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+  --space-9: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
 
   /* One-up pairs */
-  --space-0-1: clamp(0.875rem, 0.7216rem + 0.6818vw, 1.25rem);
-  --space-1-2: clamp(1.125rem, 0.8182rem + 1.3636vw, 1.875rem);
-  --space-2-3: clamp(1.6875rem, 1.3551rem + 1.4773vw, 2.5rem);
-  --space-3-4: clamp(2.25rem, 1.6364rem + 2.7273vw, 3.75rem);
-  --space-4-5: clamp(3.375rem, 2.7102rem + 2.9545vw, 5rem);
-  --space-5-6: clamp(4.5rem, 3.2727rem + 5.4545vw, 7.5rem);
+  --space-1-2: clamp(0.3125rem, 0.1847rem + 0.5682vw, 0.625rem);
+  --space-2-3: clamp(0.5625rem, 0.4091rem + 0.6818vw, 0.9375rem);
+  --space-3-4: clamp(0.875rem, 0.7216rem + 0.6818vw, 1.25rem);
+  --space-4-5: clamp(1.125rem, 0.8182rem + 1.3636vw, 1.875rem);
+  --space-5-6: clamp(1.6875rem, 1.3551rem + 1.4773vw, 2.5rem);
+  --space-6-7: clamp(2.25rem, 1.6364rem + 2.7273vw, 3.75rem);
+  --space-7-8: clamp(3.375rem, 2.7102rem + 2.9545vw, 5rem);
+  --space-8-9: clamp(4.5rem, 3.2727rem + 5.4545vw, 7.5rem);
+
+  /* Impact pairs */
+  --space-3-5: clamp(0.875rem, 0.4659rem + 1.8182vw, 1.875rem);
+  --space-3-6: clamp(0.875rem, 0.2102rem + 2.9545vw, 2.5rem);
 }
 
 *,
@@ -40,6 +57,8 @@
 body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 img,
@@ -65,7 +84,6 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   hanging-punctuation: first allow-end last;
-  word-break: break-word;
 }
 
 body {
@@ -99,17 +117,27 @@ label {
   line-height: 1.1;
 }
 
-h1,
-h2,
-h3,
+h2 {
+  font-size: var(--text-size-3);
+}
+h3 {
+  font-size: var(--text-size-1);
+}
 h4,
 h5,
 h6 {
-  text-wrap: balance;
+  font-size: var(--text-size-0);
 }
 
-p {
-  text-wrap: pretty;
+h1:not([class]),
+h2:not([class]),
+h3:not([class]),
+h4:not([class]),
+h5:not([class]),
+h6:not([class]) {
+  text-wrap: balance;
+  letter-spacing: -0.05rem;
+  word-spacing: 0.1rem;
 }
 
 /* Animation/transitions */
@@ -127,4 +155,13 @@ html {
 a:not([class]) {
   color: currentColor;
   text-underline-offset: 0.125rem;
+  text-decoration-color: var(--color-yellow);
+}
+
+ul {
+  padding-inline-start: var(--space-4);
+}
+
+ul > * + * {
+  margin-block-start: var(--space-2);
 }

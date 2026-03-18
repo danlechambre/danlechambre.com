@@ -4,6 +4,10 @@ description: "Frontend Engineer"
 slug: "cv"
 ---
 
+# Dan Chambers
+
+::subtitle[Frontend Engineer]
+
 I'm a frontend engineer with over five years of experience building web applications for start-ups, enterprise, and everything in between. Focused on creating experiences that are accessible, fast, and look great.
 
 I do my best work in teams that value humility, creativity, and quality. Having spent well over a decade closer to the humans using software than building it, I never forget there's a person behind the screen.
@@ -29,11 +33,12 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 - React
 - Node.js
 - Zod + tRPC
-  :::
 
-### Lead Developer at Why Grief Matters (voluntary, part-time)
+:::
 
-Jan 2023 - Mar 2026
+### Lead Developer at Why Grief Matters
+
+::subtitle[Jan 2023 - Mar 2026 (voluntary, part-time)]
 
 - Architected and built a modern, cost-efficient stack with Astro, Sanity CMS and Cloudflare Workers, deliberately chosen to prioritise performance, scalability, and low operational overhead.
 - Took ownership of product design following UX consultation, leading full site redesign, shifting role from pure delivery to broader technology and design leadership.
@@ -51,9 +56,9 @@ Jan 2023 - Mar 2026
 - Tailwind
   :::
 
-### Lead Frontend Developer at RAIDLOG.com (via StyleTech Solutions)
+### Lead Frontend Developer at RAIDLOG.com
 
-Apr 2022 - Apr 2023
+::subtitle[Apr 2022 - Apr 2023 (via StyleTech Solutions)]
 
 - Starting from a bootstrapped Create React App with an incomplete TypeScript migration, shaped the entire frontend architecture, selecting core libraries, prioritising speed of shipping through pragmatic tool choices like MUI.
 - Authored an architecture recommendations document ahead of departure, advising on framework migration and strategies for scaling the frontend beyond the startup phase.
@@ -71,7 +76,7 @@ Apr 2022 - Apr 2023
 
 ### Software Developer at StyleTech Solutions
 
-Dec 2020 - Apr 2023
+::subtitle[Dec 2020 - Apr 2023]
 
 - Developed strong frontend specialisation whilst delivering across a variety of client projects spanning healthcare, sports coaching, logistics and beyond.
 - Built a WCAG 2.1 AA compliant frontend for a public health organisation, applying accessibility standards across forms, navigation, and content structure.

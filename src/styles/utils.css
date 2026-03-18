@@ -1,3 +1,9 @@
+/* 
+  Breakpoints for reference
+  - sm - 65rem
+  - lg - 120rem
+*/
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -32,4 +38,76 @@
 
 .text-size-4 {
   font-size: var(--text-size-4);
+}
+
+/* Flow stacking with preset gap size */
+.stack-gap-1 > * + * {
+  margin-block-start: var(--space-1);
+}
+
+.stack-gap-2 > * + * {
+  margin-block-start: var(--space-2);
+}
+
+.stack-gap-3 > * + * {
+  margin-block-start: var(--space-3);
+}
+
+.stack-gap-4 > * + * {
+  margin-block-start: var(--space-4);
+}
+
+.stack-gap-5 > * + * {
+  margin-block-start: var(--space-5);
+}
+
+.stack-gap-6 > * + * {
+  margin-block-start: var(--space-6);
+}
+
+.stack-gap-3-6 > * + * {
+  margin-block-start: var(--space-3-6);
+}
+
+.text-preset_display-heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.05rem;
+  word-spacing: 0.25rem;
+}
+
+.text-preset_subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-size--1);
+  line-height: 1.5;
+}
+
+.sm-only_container {
+  max-width: var(--width-reading);
+  margin-inline: auto;
+}
+
+.sm-only_opt-out_container > :not([class]) {
+  max-width: var(--width-reading);
+  margin-inline: auto;
+}
+
+.sm-only_flow_p-inline > * {
+  padding-inline: var(--space-3);
+}
+
+@media (min-width: 65rem) {
+  .sm-only_container {
+    max-width: unset;
+    margin-inline: unset;
+  }
+
+  .sm-only_opt-out_container > :not([class]) {
+    max-width: unset;
+    margin-inline: unset;
+  }
+
+  .sm-only_flow_p-inline > * {
+    padding-inline: unset;
+  }
 }

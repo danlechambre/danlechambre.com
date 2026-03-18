@@ -2,6 +2,12 @@
 import "@styles/markdown-styles.css";
 ---
 
-<div class="md_wrapper">
+<div
+  class:list={[
+    "stack-gap-3-6",
+    "sm-only_opt-out_container",
+    "sm-only_flow_p-inline",
+  ]}
+>
   <slot />
 </div>

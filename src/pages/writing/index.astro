@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 
-import { getDateString } from "@utils/date";
-
 import DefaultLayout from "@components/layouts/DefaultLayout.astro";
 import SlashPageNav from "@components/ui/SlashPageNav.astro";
 import ArticleListing from "@components/ui/ArticleListing.astro";
@@ -15,7 +13,7 @@ const content = [...writing].sort((a, b) =>
 ---
 
 <DefaultLayout title="writing">
-  <div slot="main">
+  <div class="stack-gap-3-6" slot="main">
     {content.map((c) => <ArticleListing entry={c} />)}
   </div>
   <div slot="secondary">

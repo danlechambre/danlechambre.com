@@ -7,7 +7,6 @@ import SlashPageNav from "@components/ui/SlashPageNav.astro";
 import { manuallyBuiltSlugs } from "@utils/content";
 import DisplayHeading from "@components/ui/DisplayHeading.astro";
 import MarkdownStylesWrapper from "@components/ui/MarkdownStylesWrapper.astro";
-import Subtitle from "@components/ui/Subtitle.astro";
 
 interface Props {
   page: CollectionEntry<"slashPages">;
@@ -36,16 +35,20 @@ const { Content } = await render(page);
 ---
 
 <DefaultLayout title={page.data.slug}>
-  <div slot="main">
+  <div class="stack-gap-3-6" slot="main">
     <DisplayHeading as="h1" size={4}>
       {page.data.title}
     </DisplayHeading>
-    {page.data.description && <Subtitle>{page.data.description}</Subtitle>}
+    {
+      page.data.description && (
+        <p class="text-preset_subtitle">{page.data.description}</p>
+      )
+    }
     <MarkdownStylesWrapper>
       <Content />
     </MarkdownStylesWrapper>
-    <div slot="secondary">
-      <SlashPageNav />
-    </div>
+  </div>
+  <div slot="secondary">
+    <SlashPageNav />
   </div>
 </DefaultLayout>

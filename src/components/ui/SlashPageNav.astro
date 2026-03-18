@@ -1,13 +1,19 @@
 ---
 import { getCollection } from "astro:content";
 
+import { manuallyBuiltSlugs } from "@utils/content";
+
 const slashPages = await getCollection("slashPages");
+
+const filtered = slashPages.filter(
+  (x) => !([...manuallyBuiltSlugs] as Array<string>).includes(x.data.slug),
+);
 ---
 
-<nav class="slash-page-nav">
+<nav class:list={["stack-gap-1", "slash-page-nav"]}>
   <h2><span class="sr-only">Slash </span>Pages</h2>
   {
-    slashPages.map((p) => (
+    filtered.map((p) => (
       <a class="slash-page-nav_link" href={`/${p.data.slug}`}>
         {p.data.slug}
       </a>
@@ -17,23 +23,29 @@ const slashPages = await getCollection("slashPages");
 
 <style>
   h2 {
+    position: relative;
     font-family: var(--font-display);
     font-weight: 900;
     text-transform: uppercase;
     font-size: var(--text-size--1);
+  }
 
-    &:before {
-      content: "\2044";
-      font-family: var(--font-display);
-      color: lightgray;
-    }
+  h2::before {
+    position: absolute;
+    left: calc(var(--space-2) * -1);
+    content: "\2044";
+    font-family: var(--font-display);
+    color: var(--color-yellow);
   }
 
   .slash-page-nav_link {
     display: block;
-    line-height: 1.1;
+    line-height: 1;
     font-family: Courier, monospace;
     color: currentColor;
     font-size: var(--text-size-0);
+    text-decoration-color: var(--color-yellow);
+    text-underline-offset: 0.125rem;
+    /* margin-inline-start: var(--space-2); */
   }
 </style>

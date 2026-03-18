@@ -20,7 +20,7 @@ function leafWithClass(className: string): LeafHandler {
 }
 
 const leafRegistry: Record<string, LeafHandler> = {
-  subtitle: leafWithClass("md_subtitle"),
+  subtitle: leafWithClass("text-preset_subtitle"),
 };
 
 const registry: Record<string, DirectiveDefinition> = {

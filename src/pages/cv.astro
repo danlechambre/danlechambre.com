@@ -1,14 +1,15 @@
 ---
+import "@styles/markdown-styles.css";
+import "@styles/cv.css";
+
 import SlashPageNav from "@components/ui/SlashPageNav.astro";
 import DefaultLayout from "@components/layouts/DefaultLayout.astro";
-
 import { Content as CvContent } from "@content/slash-pages/cv.md";
-import MarkdownStylesWrapper from "@components/ui/MarkdownStylesWrapper.astro";
 ---
 
 <DefaultLayout title="cv">
-  <MarkdownStylesWrapper slot="main">
+  <div class="cv_wrapper stack-gap-3-6" slot="main">
     <CvContent />
-  </MarkdownStylesWrapper>
+  </div>
   <SlashPageNav slot="secondary" />
 </DefaultLayout>

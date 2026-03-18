@@ -2,9 +2,10 @@
 import "@styles/base.css";
 import "@styles/utils.css";
 
+import MainNav from "@components/ui/MainNav.astro";
 import SiteHeader from "@components/ui/SiteHeader.astro";
+
 import Head from "./Head.astro";
-import Footer from "@components/ui/Footer.astro";
 
 interface Props {
   title: string;
@@ -16,13 +17,112 @@ const props = Astro.props;
 <html lang="en">
   <Head title={props.title} />
   <body>
-    <SiteHeader />
-    <main>
-      <slot name="main" />
-    </main>
-    <div>
-      <slot name="secondary" />
+    <div class="default-layout_grid-wrapper">
+      <header class="default-layout_header">
+        <div class="default-layout_banner">
+          <SiteHeader />
+        </div>
+        <div class="default-layout_primary-nav">
+          <MainNav />
+        </div>
+      </header>
+      <main class="default-layout_main-content">
+        <slot name="main" />
+      </main>
+      <div class="default-layout_secondary-nav">
+        <slot name="secondary" />
+      </div>
+      <footer class="default-layout_footer">
+        <p>&copy; 2026 Dan Chambers</p>
+      </footer>
     </div>
-    <Footer />
   </body>
 </html>
+
+<style>
+  .default-layout_grid-wrapper > * + * {
+    margin-block-start: var(--space-4);
+  }
+
+  .default-layout_banner {
+    background-color: #eee;
+    min-height: 50vh;
+  }
+
+  @media (min-width: 65rem) {
+    .default-layout_grid-wrapper > * + * {
+      margin-block-start: unset;
+    }
+
+    .default-layout_grid-wrapper {
+      display: grid;
+      grid-template-columns: 1fr var(--width-reading) 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: var(--space-3-6);
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .default-layout_header,
+    .default-layout_footer {
+      grid-column: 1 / -1;
+    }
+
+    .default-layout_main-content {
+      grid-column: 2;
+    }
+
+    .default-layout_secondary-nav {
+      grid-column: 3;
+    }
+  }
+
+  @media (min-width: 120rem) {
+    .default-layout_grid-wrapper {
+      grid-template-columns: 30vw 1fr var(--width-reading) 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    .default-layout_header {
+      display: contents;
+    }
+
+    .default-layout_banner {
+      grid-column: 1;
+      grid-row: 1 / -1;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      min-height: unset;
+    }
+
+    .default-layout_primary-nav {
+      grid-column: 2 / -1;
+      grid-row: 1;
+    }
+
+    .default-layout_footer {
+      grid-column: 2 / -1;
+      grid-row: 3;
+    }
+
+    .default-layout_main-content {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .default-layout_secondary-nav {
+      grid-column: 4;
+    }
+  }
+
+  @media print {
+    .default-layout_header,
+    .default-layout_footer,
+    .default-layout_secondary-nav {
+      display: none;
+    }
+  }
+</style>

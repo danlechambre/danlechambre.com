@@ -22,15 +22,9 @@ const headerSizeToCssVarMap: Record<HeaderSize, string> = {
 };
 ---
 
-<Tag class:list={[headerSizeToCssVarMap[size], "display-heading"]} {...attrs}>
+<Tag
+  class:list={[headerSizeToCssVarMap[size], "text-preset_display-heading"]}
+  {...attrs}
+>
   <slot />
 </Tag>
-
-<style>
-  .display-heading {
-    font-family: var(--font-display);
-    font-weight: 900;
-    letter-spacing: -0.05rem;
-    word-spacing: 0.25rem;
-  }
-</style>

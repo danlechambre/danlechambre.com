@@ -4,7 +4,6 @@ import DefaultLayout from "@components/layouts/DefaultLayout.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import MarkdownStylesWrapper from "@components/ui/MarkdownStylesWrapper.astro";
 import DisplayHeading from "@components/ui/DisplayHeading.astro";
-import Subtitle from "@components/ui/Subtitle.astro";
 
 interface Props {
   piece: CollectionEntry<"writing">;
@@ -25,13 +24,15 @@ const { Content } = await render(piece);
 ---
 
 <DefaultLayout title={piece.data.title}>
-  <div slot="main">
-    <DisplayHeading as="h1" size={4}>
-      {piece.data.title}
-    </DisplayHeading>
-    <Subtitle>
-      {piece.data.description}
-    </Subtitle>
+  <div class="stack-gap-3-6" slot="main">
+    <div class="stack-gap-3 sm-only_container sm-only_flow_p-inline">
+      <DisplayHeading as="h1" size={4}>
+        {piece.data.title}
+      </DisplayHeading>
+      <p class="text-preset_subtitle">
+        {piece.data.description}
+      </p>
+    </div>
     <MarkdownStylesWrapper>
       <Content />
     </MarkdownStylesWrapper>

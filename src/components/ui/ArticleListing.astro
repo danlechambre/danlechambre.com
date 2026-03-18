@@ -10,30 +10,27 @@ interface Props {
 const props = Astro.props;
 ---
 
-<article class="article-listing">
+<article class="stack-gap-2 article-listing">
   <a class="article-listing_link" href={`/writing/${props.entry.id}`}>
-    <h3></h3>
     <DisplayHeading as="h3" size={2}>{props.entry.data.title}</DisplayHeading>
   </a>
-  <p>{props.entry.data.description}</p>
+  <p class="article-listing_description">{props.entry.data.description}</p>
   <footer>
-    <p>
+    <p class="text-preset_subtitle">
       {"Last updated "}
       <time datetime={props.entry.data.lastUpdatedDate}>
         {getDateString(props.entry.data.lastUpdatedDate)}
       </time>
     </p>
-    <a class="article-listing_footer-link" href={`/writing/${props.entry.id}`}
-      >Read More</a
-    >
+    <a class="article-listing_footer-link" href={`/writing/${props.entry.id}`}>
+      {`Read More`}
+    </a>
   </footer>
 </article>
 
 <style>
-  .article-listing {
-  }
-
   .article-listing_link {
+    display: block;
     color: currentColor;
   }
 
