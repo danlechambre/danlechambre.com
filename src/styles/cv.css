@@ -1,10 +1,20 @@
 .cv_wrapper {
+  padding-inline: var(--space-3);
   h1,
   h2 {
     font-family: var(--font-display);
     font-weight: 900;
     letter-spacing: -0.05rem;
     word-spacing: 0.25rem;
+  }
+
+  .md_inline-list {
+    margin-block-start: var(--space-4);
+  }
+
+  .md_inline-list * {
+    font-size: var(--text-size--1);
+    color: var(--color-lightgrey);
   }
 }
 
@@ -16,9 +26,27 @@
   .text-preset_subtitle:first-of-type {
     display: none;
   }
+
+  .cv_wrapper h2 {
+    margin-block-start: var(--space-5);
+  }
+
+  .cv_wrapper {
+    .text-preset_subtitle {
+      margin-block-start: var(--space-3);
+      font-size: var(--text-size--1);
+      font-family: var(--font-serif);
+      font-weight: bold;
+    }
+  }
 }
 
 @media print {
+  .cv_wrapper * {
+    font-family:
+      Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  }
+
   .cv_wrapper.stack-gap-3-6 > * + * {
     margin-block-start: var(--space-3);
   }
@@ -26,14 +54,14 @@
   .cv_wrapper.stack-gap-3-6 h2 {
     margin-block-start: var(--space-5);
   }
+
   .cv_wrapper.stack-gap-3-6 h3 {
     margin-block-start: var(--space-4);
   }
 
   .cv_wrapper {
     --font-scale-multiplier: 1.25;
-    --print-text-size-s: 0.8rem;
-    --print-text-size-0: 1rem;
+    --print-text-size-0: 10pt;
     --print-text-size-1: calc(
       var(--font-scale-multiplier) * var(--print-text-size-0)
     );
@@ -46,45 +74,63 @@
     --print-text-size-4: calc(
       var(--font-scale-multiplier) * var(--print-text-size-3)
     );
+    --print-text-size-s: calc(var(--print-text-size-0) * 0.8);
+
+    --print-color-darkpurple: #150144;
+    --print-color-lightpurple: rgb(151, 142, 209);
+    /* --print-color-pink: rgb(230, 31, 255); */
+    --print-color-pink: rgb(255, 31, 255);
+
+    * {
+      color: black;
+    }
 
     font-size: var(--print-text-size-0);
 
+    h3 > a {
+      text-decoration-color: var(--print-color-pink);
+    }
+
     h1 {
       font-size: var(--print-text-size-4);
+      color: var(--print-color-darkpurple);
     }
 
     h2 {
       font-size: var(--print-text-size-2);
+      color: var(--print-color-pink);
     }
 
     h3 {
       font-size: var(--print-text-size-1);
+      color: var(--print-color-darkpurple);
     }
 
     h1,
     h2,
     h3,
     h4 {
-      font-family: var(--font-display);
       font-weight: 900;
     }
 
     .md_inline-list {
       margin-block-start: var(--space-2);
+      margin-block-end: var(--space-6);
     }
+
     .md_inline-list * {
-      font-family: var(--font-display);
       font-style: italic;
       font-size: var(--print-text-size-s);
+      color: var(--print-color-lightpurple);
     }
 
     .text-preset_subtitle {
-      font-family: var(--font-display);
       font-size: var(--print-text-size-s);
-      margin-block-start: var(--space-2);
+      color: var(--print-color-lightpurple);
     }
 
     .text-preset_subtitle:first-of-type {
+      color: var(--print-color-darkpurple);
       margin-block-start: var(--space-1);
       font-size: var(--print-text-size-s);
       text-transform: uppercase;

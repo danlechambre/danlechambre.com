@@ -1,8 +1,11 @@
 :root {
-  --color-white: oklch(98.809% 0.00011 271.152);
-  --color-black: oklch(31.671% 0.06307 103.042);
+  --color-white: oklch(0.995 0.0005 106.423);
+  --color-black: oklch(0.3 0.074 105.88);
+  --color-lightgrey: oklch(0.6 0.025 105.88);
   --color-grey: oklch(81.957% 0.02731 102.359);
   --color-yellow: oklch(90.057% 0.18651 101.829);
+  --color-red: oklch(0.5765 0.1973 27.53);
+  --color-blue: oklch(0.5765 0.1283 262.59);
 
   /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.2,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   --text-size--2: clamp(0.7813rem, 0.7457rem + 0.1578vw, 0.8681rem);
@@ -155,7 +158,7 @@ html {
 a:not([class]) {
   color: currentColor;
   text-underline-offset: 0.125rem;
-  text-decoration-color: var(--color-yellow);
+  text-decoration-color: var(--color-red);
 }
 
 ul {

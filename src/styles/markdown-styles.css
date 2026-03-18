@@ -1,4 +1,9 @@
 /* Styles for Markdown Directives */
+.md_inline-list {
+  color: var(--color-lightgrey);
+  font-size: var(--text-size--1);
+}
+
 .md_inline-list h4 {
   display: inline;
 }
@@ -60,4 +65,8 @@
 .md_screenplay_dialogue {
   max-width: 35ch;
   margin: auto;
+}
+
+.text-preset_subtitle {
+  color: var(--color-lightgrey);
 }
