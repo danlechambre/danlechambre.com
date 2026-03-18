@@ -4,6 +4,7 @@ import "@styles/utils.css";
 
 import MainNav from "@components/ui/MainNav.astro";
 import SiteHeader from "@components/ui/SiteHeader.astro";
+import Footer from "@components/ui/Footer.astro";
 
 import Head from "./Head.astro";
 
@@ -29,11 +30,11 @@ const props = Astro.props;
       <main class="default-layout_main-content">
         <slot name="main" />
       </main>
-      <div class="default-layout_secondary-nav">
+      <div class="default-layout_secondary-nav sm-only_container">
         <slot name="secondary" />
       </div>
       <footer class="default-layout_footer">
-        <p>&copy; 2026 Dan Chambers</p>
+        <Footer />
       </footer>
     </div>
   </body>
@@ -47,6 +48,10 @@ const props = Astro.props;
   .default-layout_banner {
     background-color: #eee;
     min-height: 50vh;
+  }
+
+  .default-layout_secondary-nav {
+    padding-inline: var(--space-5);
   }
 
   @media (min-width: 65rem) {
@@ -75,6 +80,7 @@ const props = Astro.props;
 
     .default-layout_secondary-nav {
       grid-column: 3;
+      padding-inline: unset;
     }
   }
 
@@ -109,6 +115,7 @@ const props = Astro.props;
     }
 
     .default-layout_main-content {
+      padding-block-start: calc(var(--space-6) * 2);
       grid-column: 3;
       grid-row: 2;
     }
