@@ -8,17 +8,15 @@ slug: "cv"
 
 ::subtitle[Frontend Engineer]
 
-I'm a frontend engineer with over five years of experience building web applications for start-ups, enterprise, and everything in between. Focused on creating experiences that are accessible, fast, and look great.
-
-I do my best work in teams that value humility, creativity, and quality. Having spent well over a decade closer to the humans using software than building it, I never forget there's a person behind the screen.
+I'm a frontend engineer with over five years of experience building web applications for start-ups, enterprise, and everything in between. Focused on creating experiences that are accessible, fast, and look great. I do my best work in teams that value humility, creativity, and quality. Having spent well over a decade closer to the humans using software than building it, I never forget there's a person behind the screen.
 
 ## Experience
 
-### Full-Stack TypeScript Engineer at Hark by SolarEdge
+### Full-Stack TypeScript Engineer at [Hark by SolarEdge](https://harksys.com)
 
 ::subtitle[Jul 2023 - Mar 2026]
 
-- Embedded a culture of frontend engineering rigour within a full-stack team, advocating for compositional thinking, consistent abstractions, design integration, and challenging throwaway UI decisions, resulting in a more consistent, scalable UI.
+- Championed a culture of frontend engineering rigour within a full-stack team, advocating for compositional thinking, consistent abstractions, design integration, and challenging throwaway UI decisions, resulting in a more consistent, scalable UI.
 - Built complex interfaces: analytics dashboards, rule builders, IoT onboarding workflows, optimising for performance across tens of thousands of data points and hundreds of assets.
 - Partnered with designer to architect a multi-layered design token system as the foundation for a greenfield platform, ensuring systematic, lasting alignment between design and code.
 - Leveraged foundational design system work to embed LLM-assisted development as a first-class workflow, enabling Claude Code to reliably one-shot full production UI screens directly from Figma frames.
@@ -33,12 +31,14 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 - React
 - Node.js
 - Zod + tRPC
+- Redux
+- Styled Components
 
 :::
 
-### Lead Developer at Why Grief Matters
+### Lead Developer at [Why Grief Matters](https://dev.whygriefmatters.org)
 
-::subtitle[Jan 2023 - Mar 2026 (voluntary, part-time)]
+::subtitle[Jan 2023 - Dec 2025 (voluntary, part-time)]
 
 - Architected and built a modern, cost-efficient stack with Astro, Sanity CMS and Cloudflare Workers, deliberately chosen to prioritise performance, scalability, and low operational overhead.
 - Took ownership of product design following UX consultation, leading full site redesign, shifting role from pure delivery to broader technology and design leadership.
@@ -51,12 +51,13 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 
 - Astro
 - Sanity
+- Tailwind
 - Web Components
 - Cloudflare Workers
-- Tailwind
-  :::
 
-### Lead Frontend Developer at RAIDLOG.com
+:::
+
+### Lead Frontend Developer at [RAIDLOG.com](https://raidlog.com)
 
 ::subtitle[Apr 2022 - Apr 2023 (via StyleTech Solutions)]
 
@@ -71,10 +72,15 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 
 - TypeScript
 - React
+- React Query
+- Lexical
+- OpenAI API Platform
+- Yup
 - MUI
-  :::
 
-### Software Developer at StyleTech Solutions
+:::
+
+### Software Developer at [StyleTech Solutions](https://www.styletech.co.uk)
 
 ::subtitle[Dec 2020 - Apr 2023]
 
@@ -85,11 +91,13 @@ I do my best work in teams that value humility, creativity, and quality. Having 
 
 #### Tech
 
+- TypeScript
 - React
 - Vue
 - jQuery
+- Tailwind
 - WPF
-- .NET
+- C# + .NET
 - MS SQL
 
 :::
